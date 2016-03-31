@@ -1,0 +1,17 @@
+==== HOW TO UPDATE THESIS ====
+
+1. remote repository is at https://github.com/Jordan-Campbell/Thesis.git
+2. remote is called thesis-remote-origin
+
+3. To udate the local files:
+   3.a: > git checkout master
+   	> git pull --rebase thesis-origin-master master
+
+4. To add local files so they can be saved:
+   4.a: > git add <filenames>
+   	> git commit -m "message"
+
+5. To save local changes to the remote repository:
+   5.a: > git checkout master
+   	> git pull --rebase thesis-origin-master master
+	> git push thesis-remote-origin master

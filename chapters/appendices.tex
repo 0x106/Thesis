@@ -1,0 +1,53 @@
+%%
+%% Now we have to get the source code in as a set of Appendices.
+%% Source code will be Appendix A, with each file numbered X.y
+%%
+\appendix
+
+%%
+%% -> \chapter will cause the next bit to be labelled Appendix A
+%% -> \section will give us A.1, \subsection A.1.1 etc.
+%%
+%% I suggest a section for each program and a subsection for each file
+%% in the program.  Alternatively, a chapter for each program, a
+%% section for each library and a subsection for each file.
+%%
+\chapter{Source Code for thesis.dvi}
+
+\linespread{1}
+\footnotesize
+
+\section{thesis.tex}
+\listinginput[10]{1}{thesis.tex}
+
+\subsection{abstract.tex}
+\listinginput[10]{1}{abstract.tex}
+
+\subsection{acknowledgements.tex}
+\listinginput[10]{1}{acknowledgements.tex}
+
+\subsection{intro.tex}
+\listinginput[10]{1}{intro.tex}
+
+\subsection{literature.tex}
+\listinginput[10]{1}{literature.tex}
+
+\subsection{new\_ideas.tex}
+\listinginput[10]{1}{new_ideas.tex}
+
+\subsection{implementation.tex}
+\listinginput[10]{1}{implementation.tex}
+
+\subsection{results.tex}
+\listinginput[10]{1}{results.tex}
+
+\subsection{conclusion.tex}
+\listinginput[10]{1}{conclusion.tex}
+
+\subsection{appendices.tex}
+\listinginput[10]{1}{appendices.tex}
+
+%%
+%% \listinginput[x]{y}{filename} gives a listing of <filename>,
+%% starting at line y with a line-number at every xth line.
+%%

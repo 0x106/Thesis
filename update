@@ -1,9 +1,10 @@
 #! /bin/bash
 
 echo '---> Performing a Thesis update.'
+echo '---> Any local changes must be _manually_ added and committed'
 
-git add chapters/outline.tex
-git commit -m "Regular update"
+#git add chapters/outline.tex
+#git commit -m "Regular update"
 git checkout master
 git pull --rebase thesis-remote-origin master
 git push thesis-remote-origin master

@@ -3,8 +3,6 @@
 
 \citet{campbell16}
 
-IS MY UPDATE SCRIPT WORKING?
-
 The focus of the thesis is on the use of information and probability theory measures to track the pose, shape, and appearance of non-rigid articulated objects with multiple independently moving cameras. We demonstrate a hierarchical framework that uses the same independence measure, the HSIC, to estimate first the shape and appearance, then the pose, then the activity of the dominant actor. At each level different features are employed, however the same kernel function and the same Hilbert-Schmidt norm are used to estimate the independence. 
 
 The most elementary level involves a single static camera tracking a single moving non-articulated, rigid object. This requires only that the appearance and the shape be tracked (from here the term appearance will refer to both the appearance and the shape, which are almost always included together). This example is essentially TLD, which is a very robust and accurate tracker. I have made a contribution to show that my algorithm is an extension to TLD in this case. My tracker models a target as a collection of points. Each point is naturally endowed with x, y coordinates. The features for each point are the intensity at that pixel and the distance to the nearest edge. In each frame we find the set of points that maximises the HSIC with the reference (as well as maximising the self similarity and minimising the similarity with the negative training example).

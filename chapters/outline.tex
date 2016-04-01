@@ -3,11 +3,9 @@
 
 \citet{campbell16}
 
-The focus of the thesis is on the use of information and probability theory measures to track the pose, shape, and appearance of non-rigid articulated objects with multiple independently moving cameras. We demonstrate a hierarchical framework that uses the same independence measure, the HSIC, to estimate first the shape and appearance, then the pose, then the activity of the dominant actor. At each level different features are employed, however the same kernel function and the same Hilbert-Schmidt norm are used to estimate the independence. 
+In this thesis we will examine the use of information and probability theory measures to track the pose, shape, and appearance of non-rigid articulated objects with multiple independently moving cameras. We demonstrate a hierarchical framework that uses the Hilbert-Schmidt independence criterion, to estimate first the shape and appearance, then the pose, then the activity of the dominant actor. At each level different features are employed, however the same kernel function and the same Hilbert-Schmidt norm are used to estimate the independence. 
 
-The most elementary level involves a single static camera tracking a single moving non-articulated, rigid object. This requires only that the appearance and the shape be tracked (from here the term appearance will refer to both the appearance and the shape, which are almost always included together). This example is essentially TLD, which is a very robust and accurate tracker. I have made a contribution to show that my algorithm is an extension to TLD in this case. My tracker models a target as a collection of points. Each point is naturally endowed with x, y coordinates. The features for each point are the intensity at that pixel and the distance to the nearest edge. In each frame we find the set of points that maximises the HSIC with the reference (as well as maximising the self similarity and minimising the similarity with the negative training example).
-
-The next case involves rigid-body articulated objects. I show that an articulated object can be viewed as a collection of points that maintain mesh geodesics at all times. In each frame we obtain the prior locations of all the points using optical flow, then perform local optimisations that solve both stage one, with the added geodesic feature. The run time of the algorithm can be improved by computing only the geodesics between points that lie on joints. Note that enforcing geodesic constraints is analogous to analysis-by-synthesis approaches. I believe that it is more useful to use optical flow to approximate the new location of the points, rather than optimising for the model position. I might need to: optimise the 3D model position that maximises the dependence between the two 
+The most elementary level involves a single static camera tracking a single moving non-articulated, rigid object. This requires only that the appearance be tracked. Note that the appearance is defined as the combination of the gray-level intensity, the distance function, and the motion. This example is essentially TLD, which is a very robust and accurate tracker. I have made a contribution to show that my algorithm is an extension to TLD in this case. My tracker models a target as a collection of points. Each point is naturally endowed with x, y coordinates. The features for each point are the intensity at that pixel, the distance to the nearest edge, and the motion of that point from the previous frame. In each frame we find the set of points that maximises the HSIC with the reference (as well as maximising the self similarity and minimising the similarity with the negative training example). It is important to note that the HSIC \'fails\' for uniform distributions.
 
 \begin{enumerate}
 \item{\textbf{Introduction}}
@@ -19,18 +17,18 @@ The next case involves rigid-body articulated objects. I show that an articulate
         \item{Appearance modelling}
         \item{Activity recognition}
         \item{Independently moving cameras}
-          \end{enumerate}
+  \end{enumerate}
 \item{\textbf{Hilbert Schmidt independence criterion}}
   \begin{enumerate}
     \item{Euclidean spaces}
-        \item{Functional analysis}
-        \item{Hilbert spaces}
-        \item{Reproducing property}
-        \item{RKHS}
-        \item{Kernels}
-          \item{Covariance Measures}
-        \item{HSIC measure}
-          \end{enumerate}
+    \item{Functional analysis}
+    \item{Hilbert spaces}
+    \item{Reproducing property}
+    \item{RKHS}
+    \item{Kernels}
+    \item{Covariance Measures}
+    \item{HSIC measure}
+  \end{enumerate}
 \item{\textbf{Information theory}}
   \begin{enumerate}
     \item{Entropy / uncertainty}
@@ -49,62 +47,4 @@ The next case involves rigid-body articulated objects. I show that an articulate
     \item{Temporal synchronisation}
       \item{Dynamic time warping}
         \end{enumerate}
-\item{\textbf{Activity recognition}}
-\end{enumerate}
-
-
-The focus of this thesis is to examine the use of information and probability theory measures to track the pose, shape, and appearance of non-rigid articulated objects with multiple independently moving cameras. We demonstrate a hierarchical framework that uses the same independence measure, the HSIC, to estimate first the shape and appearance, then the pose, then the activity of the dominant actor. At each level different features are employed, however the same kernel function and the same Hilbert-Schmidt norm are used to estimate the independence. 
-
-The most elementary level involves a single static camera tracking a single moving non-articulated, rigid object. This requires only that the appearance and the shape be tracked (from here the term appearance will refer to both the appearance and the shape, which are almost always included together). This example is essentially TLD, which is a very robust and accurate tracker. I have made a contribution to show that my algorithm is an extension to TLD in this case. My tracker models a target as a collection of points. Each point is naturally endowed with x, y coordinates. The features for each point are the intensity at that pixel and the distance to the nearest edge. In each frame we find the set of points that maximises the HSIC with the reference (as well as maximising the self similarity and minimising the similarity with the negative training example).
-
-The next case involves rigid-body articulated objects. I show that an articulated object can be viewed as a collection of points that maintain mesh geodesics at all times. In each frame we obtain the prior locations of all the points using optical flow, then perform local optimisations that solve both stage one, with the added geodesic feature. The run time of the algorithm can be improved by computing only the geodesics between points that lie on joints. Note that enforcing geodesic constraints is analogous to analysis-by-synthesis approaches. 
-
-It is not yet obvious how to use the model / geodesics / optical flow information. 
-
-1. Specify some initial points in the first frame. (the same as we normally would). In each subsequent frame use a local optimisation with the location given by the optical flow information as a prior. 
-
-
-I believe that it is more useful to use optical flow to approximate the new location of the points, rather than optimising for the model position. I might need to: optimise the 3D model position that maximises the dependence between the two 
-
-\begin{enumerate}
-\item{\textbf{Introduction}}
-  \begin{enumerate}
-    \item{Mixed reality}
-        \item{Pose, shape, appearance}
-        \item{Articulated objects}
-        \item{Markerless motion capture}
-        \item{Appearance modelling}
-        \item{Activity recognition}
-        \item{Independently moving cameras}
-          \end{enumerate}
-\item{\textbf{Hilbert Schmidt independence criterion}}
-  \begin{enumerate}
-    \item{Euclidean spaces}
-        \item{Functional analysis}
-        \item{Hilbert spaces}
-        \item{Reproducing property}
-        \item{RKHS}
-        \item{Kernels}
-          \item{Covariance Measures}
-        \item{HSIC measure}
-          \end{enumerate}
-\item{\textbf{Information theory}}
-  \begin{enumerate}
-    \item{Entropy / uncertainty}
-        \item{Mutual information}
-        \item{Pose estimation}
-          \end{enumerate}
-\item{\textbf{Appearance tracking}}
-\item{\textbf{Pose estimation}}
-  \begin{enumerate}
-    \item{Bottom-up}
-        \item{Top-down: Analysis by synthesis}
-        \item{Calibration free - motion parameter estimation}
-          \end{enumerate}
-\item{\textbf{Activity recognition}}
-  \begin{enumerate}
-    \item{Temporal synchronisation}
-      \item{Dynamic time warping}
-        \end{enumerate}
-\item{\textbf{Activity recognition}}
 \end{enumerate}

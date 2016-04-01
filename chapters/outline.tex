@@ -7,6 +7,15 @@ In this thesis we will examine the use of information and probability theory mea
 
 The most elementary level involves a single static camera tracking a single moving non-articulated, rigid object. This requires only that the appearance be tracked. Note that the appearance is defined as the combination of the gray-level intensity, the distance function, and the motion. This example is essentially TLD, which is a very robust and accurate tracker. I have made a contribution to show that my algorithm is an extension to TLD in this case. My tracker models a target as a collection of points. Each point is naturally endowed with x, y coordinates. The features for each point are the intensity at that pixel, the distance to the nearest edge, and the motion of that point from the previous frame. In each frame we find the set of points that maximises the HSIC with the reference (as well as maximising the self similarity and minimising the similarity with the negative training example). It is important to note that the HSIC \'fails\' for uniform distributions.
 
+To track the pose we use some sort of optimisation scheme to search through potential poses. Options are: hierarchical search, PSO, LM.
+
+1. Single camera tracking - basically done.
+2. Multi camera tracking with known calibration - could be done without a prior labelling of the appearance (i.e just using the MI scheme from previously and then creating a model on the fly.)
+3. unknown calibration - investigate the additional parameters that need to be optimised. 
+4. activity recognition - constant alpha working (temporal synch + clustering / recognition)
+5. DTW - allows unknown alpha, therefore may improve the performance.
+
+
 \begin{enumerate}
 \item{\textbf{Introduction}}
   \begin{enumerate}

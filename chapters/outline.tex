@@ -17,16 +17,32 @@ To track the pose we use some sort of optimisation scheme to search through pote
 
 
 \begin{enumerate}
+
+%% ======== Introduction ======== %%
 \item{\textbf{Introduction}}
   \begin{enumerate}
     \item{Mixed reality}
-        \item{Pose, shape, appearance}
-        \item{Articulated objects}
-        \item{Markerless motion capture}
-        \item{Appearance modelling}
-        \item{Activity recognition}
-        \item{Independently moving cameras}
+    \item{Pose, shape, appearance}
+    \item{Articulated objects}
+    \item{Markerless motion capture}
+    \item{Appearance modelling}
+    \item{Activity recognition}
+    \item{Independently moving cameras}
   \end{enumerate}
+
+%% ======== Information Theory ======== %%
+\item{\textbf{Probability \& Information theory}}
+  \begin{enumerate}
+  \item{Probability spaces}
+  \item{Random variables}
+  \item{Distributions}
+  \item{Moments}
+  \item{Expectation, variance, covariance}
+  \item{Entropy \& uncertainty}
+  \item{Mutual information}
+  \end{enumerate}
+
+%% ======== HSIC ======== %%
 \item{\textbf{Hilbert Schmidt independence criterion}}
   \begin{enumerate}
     \item{Euclidean spaces}
@@ -34,26 +50,58 @@ To track the pose we use some sort of optimisation scheme to search through pote
     \item{Hilbert spaces}
     \item{Reproducing property}
     \item{RKHS}
-    \item{Kernels}
+    \item{Kernels - universality / characteristic}
     \item{Covariance Measures}
     \item{HSIC measure}
   \end{enumerate}
-\item{\textbf{Information theory}}
-  \begin{enumerate}
-    \item{Entropy / uncertainty}
-        \item{Mutual information}
-        \item{Pose estimation}
-          \end{enumerate}
+
+%% ======== Appearance Tracking ======== %%
 \item{\textbf{Appearance tracking}}
+
+%% ======== Pose Estimation ======== %%
 \item{\textbf{Pose estimation}}
   \begin{enumerate}
     \item{Bottom-up}
-        \item{Top-down: Analysis by synthesis}
-        \item{Calibration free - motion parameter estimation}
-          \end{enumerate}
+    \item{Top-down: Analysis by synthesis}
+    \item{Calibration free - motion parameter estimation}
+  \end{enumerate}
+
+%% ======== Activity Recognition ======== %%
 \item{\textbf{Activity recognition}}
   \begin{enumerate}
     \item{Temporal synchronisation}
-      \item{Dynamic time warping}
-        \end{enumerate}
+    \item{Dynamic time warping}
+  \end{enumerate}
 \end{enumerate}
+
+
+
+
+
+\section{Information Theory}
+
+
+
+What is information theory? Where did it start? What questions does it seek to answer? What are the important concepts?
+--> capacity of a channel to transmit information
+--> what capacity does the system have to transmit information about data from two images?
+
+The focus of this chapter is on the mathematical concept of information theory, which was first proposed by Claude Shannon in his seminal 1948 paper "A Mathematical Theory of Communication". Central to information theory is the concept of \textit{channel capacity} which describes the ability of a \textit{channel} to transmit information from a source to a destination. In particular, the noisy channel coding theorem specifies an upper bound on the rate at which information can be transmitted through a channel in the presence of noise. Notably, this upper bound depends only on the statistical characteristics of the channel. 
+
+\subsection{Entropy \& Uncertainty}
+
+How are entropy and uncertainty related? Make the relationship between uncertainty and variance etc quite clear. These links are going to be important later when we talk about HSIC, as it is dependent on the covariance, which is functionally related to the notions of uncertainty and therefore entropy.
+
+\section{Pose estimation}
+
+\subsection{Bottom up}
+
+The principle difference between bottom-up and top-down is the use of the model. In BU estimation we do not know the model of the target. As we track a series of points, however, we can estimate the joint positions by computing the minimum spanning tree on the geodesic distance graph. We could do a graph cut type thing. Initially we want to find which edges are connected to which others. There is an edge between two points if the distances are preserved. We then want to find the joint positions. Similar to Steve's work.
+
+\subsection{Top down}
+
+This is the main approach we are using. We have a known model of the target (i.e all the limb lengths and connections) that we wish to fit to the images(s) the best. For any particular pose we can evaluate the cost, then we just take the best pose. Note that we can think of the model as something that acts to preserve geodesic distances between points, i.e. it lets them move, but only in a way that preserves the shape of the target. 
+
+\subsection{Calibration free}
+
+This is currently future work. Track the pose independently in both images. Then we want to find the 3DT pose matrix that best matches the two 2D pose matrices. The principle question is how to propose any given 3DT matrix? probably hard given all the constraints etc. 

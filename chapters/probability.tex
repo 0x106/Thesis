@@ -1,0 +1,36 @@
+\chapter{Probability Theory}
+\label{probability}
+
+
+The prinicple contribution of this thesis is to demonstate the utility of probability and information theory measures for addressing the correspondence problem in certain computer vision applications. In particular we will examine how the \textit{mutual information} (MI) and the \textit{Hilbert Schmidt independence criterion} (HSIC) can be used to evaluate the relationship between two objects. We begin with an introduction to key concepts in probability theory, then demonstrate how these concepts are central to the development of information theory. We conclude with a discussion of the mutual information. In the following chapter we introduce the reader to Hilbert spaces, then demonstrate how Hilbert spaces relate to earlier concepts in probability and information theory. 
+
+\section{Elements of Probability Theory}
+
+\subsection{Probability spaces}
+
+A probability space is a triple $(\Omega, \mathcal{F}, \mathcal{P})$ where $\Omega$ is a sample, or outcome space, $\mathcal{F}$ is the event space, and $\mathcal{P} : \mathcal{F} \rightarrow \mathbb{R}$ is a function that maps events to probabilities. The sample space refers to the set of all outcomes that could occur, while the element $A \in \mathcal{F}$ is a subset of the event space such that $A_i \subseteq \Omega$. The function $\mathcal{P} : \mathcal{F} \rightarrow \mathbb{R}$ assigns a value to elements of the event space that describe the likelihood of that event occuring. The probability function must satisfy the following properties (2013grayentropy):
+
+\begin{itemize}
+	\item \textit{nonnegative:} 
+		\begin{equation}
+			P(A) \geq 0, \:\: \forall A \in \mathcal{F};
+		\end{equation}
+	\item \textit{normalised:} 
+		\begin{equation}
+			P(\Omega) = 1;
+		\end{equation}
+	\item \textit{countably additive:} 
+		$$\text{If} \: A_i \in \mathcal{F}, i = 1, 2, ... \text{are disjoint, then}$$
+		\begin{equation}
+			P(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty}{P(A_i)}.
+		\end{equation}
+\end{itemize}
+
+The first condition states that probability values must be greater than or equal to zero, while the second and third conditions collectively state that 
+
+In the context of computer vision, for example, the sample space is defined by the application. For a set of images the sample space will change depending on factors such as the width and height of the image, the number of channels used to describe each pixel and the range of values each channel can take. The sample space for the set of 8-bit gray-scale images with a fixed width and height is given by the set of all possible configurations of pixel intensities. 
+
+\subsection{Random variables \& Distributions}
+
+(2013durretprobability)
+Given our probability space defined earlier we now turn to the definition of a random variable and its associated distribution. Formally, a random variable $X$ is a function that maps a sample space to the space of real numbers, i.e. $X\: : \: \Omega \rightarrow \mathbb{R}$. 

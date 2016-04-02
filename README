@@ -1,0 +1,44 @@
+What you will find here:
+
+The otagothesis package for Otago University Departments that use Harvard-style
+citations, by Nathan Rountree <rountree@cs.otago.ac.nz>
+
+The distribution includes a Makefile to save all the typing you usually
+have to do to compile a LaTeX document.
+
+If you want to take a look at the thesis template immediately:
+type "make".
+
+To check out the example thesis (which shows you how to do bibliographic
+references and suchlike), change to the example_document directory
+and type "make".
+
+There is one critical file in the distribution:
+	otagothesis.sty
+There are others which will make like easier if they are part of your
+Latex distribution:
+        natbib.sty
+        plainnat.bst
+        moreverb.sty
+        graphicx.sty
+
+It is a good idea to have a $HOME/tex directory in which you put the
+otagothesis.sty file.  To do this:
+
+  Create a directory "$HOME/tex" or similar.
+  Put the otagothesis.sty file in it.
+  Set the following environment variables in .cshrc or .bash_profile:
+  TEXINPUTS=:$HOME/tex
+  BSTINPUTS=:$HOME/tex  (useful if you ever use something other than
+plainnat.bst to format your bibliographies.)
+
+The leading colon (":") ensures that the system path already associated
+with TEXINPUTS doesn't get lost.
+
+In the example_document directory you will find a long-ish document
+which shows you how to include bibliographic references, figures and tables
+properly.  It also shows you some easy ways of doing code-listings and
+code-dumps for appendices.
+
+The otagothesis package is known to work under linux and MacOsX, under the
+TeTeX distribution.

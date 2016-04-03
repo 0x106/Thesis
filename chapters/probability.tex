@@ -73,6 +73,92 @@ In order to understand probability distribution functions we need a language to 
 
 Since Claude Shannon's seminal 1948 paper "A Mathematical Theory of Communication", the field of information theory has developed rapidly. [Give some examples etc].
 
-Information theory was originally intended 
+ Much of the early work concerning information theory was intended to be used to develop methods for telephony, and in particular to understand theoretical limits for which a message could be transmitted across a noisy channel. Shannon sought a function that would describe the uncertainty associated with a particular random variable. Shannon recognised that the \textit{entropy}, previously found in statistical mechanics as Boltmann's entropy equation (reference), was a suitable function for relating the probability distribution of a random variable to its uncertainty (\cite{shannon2001mathematical}). For a given random variable $X = \{x_1, x_2, ...., x_N\}$ with corresponding probability distribution $P = \{p_1, p_2, ...., p_N\}$ the Shannon entropy is 
+
+\begin{equation}
+	H(X) = \sum_i^N{p_i \: \text{log} \: (p_i)}.
+\end{equation}
+
+\noindent Further, \cite{rrnyi1961measures} demonstrated that the Shannon entropy is the limiting case as $\alpha \rightarrow 1$ in a continuous family of functions that satisfy
+
+\begin{equation}
+	H_\alpha(X) = \frac{1}{1 -\alpha} \: \text{log}\:\sum_i^N{{p_i}^\alpha}.
+\end{equation}
+
+\noindent The Renyi entropy is defined for $\alpha = 2$ as 
+
+\begin{equation}
+	H_2(X) = - \text{log} \sum_i^N{{p_i}^2}.
+\end{equation}
+
+\noindent The joint entropy of the random variables $X$, and $Y$, is given by
+
+\begin{equation}
+	H(X, Y) = \sum_i^N\sum_k^N{p_{i,k} \: \text{log} \: (p_{i,k})},
+\end{equation}
+
+\noindent where $p_{i,k} = P(x_i,y_k)$. One of the key characteristics of the entropy is that it is minimised for events that are either very likely or very unlikely to occur. As a consequence, the entropy is maximised when we are most uncertain about the outcome of an event. Given a Bernoulli trial (such as flipping a coin) the entropy is maximised when the probability of either outcome is equal, as can be seen in (bernoulli entropy figure). 
+
+%Note that when $X$ and $Y$ are independent, then we have that $p_{i,k} = p_ip_k$, i.e. that the joint probability of $x_i$ and $y_k$ is equal to the product of their respective probabilities. This means that at independence $H(i,k) = $ 
+
+One of the principle measures to utilise the entropy is the mutual information (reference (shannon?)), defined by
+
+\begin{equation}
+	I(X, Y) = H(X) + H(Y)  - H(X, Y).
+\end{equation}
+
+The mutual information is the reduction in uncertainty in $X$, given observations of $Y$ (and vice versa). Notably, the mutual information can be used to characterise the dependency between $X$ and $Y$. We can express the mutual information in terms of probabilities as 
+
+
+\begin{equation}
+	I(X, Y) = \sum_i^N\sum_k^N{p_{i,k} \: \text{log} \: (\frac{p_{i,k}}{p_ip_k})},
+\end{equation}
+
+\noindent which is zero if and only if $X$ and $Y$ are independent, i.e. if and only if $p_{i,k} = p_i\:p_k$. 
+
+We can see that the mutual information will be greater when the respective entropies are maximised and when the joint entropy is maximised. Consider, for example, the outcome of two Bernoulli trials, such as flipping two coins $\text{T}_1$ and $\text{T}_2$ in succession. In order for the mutual information to be maximised we wish to reduce our uncertainty about the outcome of $\text{T}_2$ after observing $\text{T}_1$ by as much as possible. This occurs when our initial uncertainty, i.e our uncertainty about the outcome of $\text{T}_1$, is maximised and our uncertainty about $\text{T}_2$ given $\text{T}_1$ is minimised. We can see that this occurs, for example, when $P(\text{T}_1 = \textit{heads}) = 0.5$ and $P(\text{T}_1 = \textit{heads}, \text{T}_2 = \textit{heads}) = 1$ (with all other joint probabilities equal to zero).
+
+
+In his paper, \cite{shannon2001mathematical} states that "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

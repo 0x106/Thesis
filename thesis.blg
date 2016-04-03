@@ -6,44 +6,48 @@ A level-1 auxiliary file: chapters/probability.aux
 The style file: otago.bst
 A level-1 auxiliary file: appendices.aux
 Database file #1: thesis.bib
-You've used 1 entry,
+Warning--no journal in rrnyi1961measures
+Warning--no number and no volume in rrnyi1961measures
+Warning--page numbers missing in rrnyi1961measures
+You've used 3 entries,
             2855 wiz_defined-function locations,
-            619 strings with 4998 characters,
-and the built_in function-call counts, 489 in all, are:
-= -- 33
-> -- 26
+            631 strings with 5222 characters,
+and the built_in function-call counts, 1524 in all, are:
+= -- 121
+> -- 78
 < -- 0
-+ -- 6
-- -- 10
-* -- 31
-:= -- 105
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 5
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 18
-empty$ -- 37
-format.name$ -- 10
-if$ -- 82
++ -- 20
+- -- 30
+* -- 108
+:= -- 303
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 15
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 51
+empty$ -- 111
+format.name$ -- 30
+if$ -- 264
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 8
-num.names$ -- 10
-pop$ -- 6
+missing$ -- 4
+newline$ -- 17
+num.names$ -- 30
+pop$ -- 13
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 36
 quote$ -- 0
-skip$ -- 19
+skip$ -- 53
 stack$ -- 0
-substring$ -- 20
-swap$ -- 5
+substring$ -- 78
+swap$ -- 15
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 10
-warning$ -- 0
-while$ -- 10
+type$ -- 50
+warning$ -- 3
+while$ -- 32
 width$ -- 0
-write$ -- 16
+write$ -- 40
+(There were 3 warnings)

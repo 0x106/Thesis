@@ -5,4 +5,14 @@ Campbell, J. (2016).
 \newblock {\em {How to do Anything}}.
 \newblock Dunedin, New Zealand: {Non-existent Publishers}.
 
+\bibitem[\protect\citeauthoryear{Renyi}{Renyi}{1961}]{rrnyi1961measures}
+Renyi, A. (1961).
+\newblock On measures of entropy and information.
+
+\bibitem[\protect\citeauthoryear{Shannon}{Shannon}{2001}]{shannon2001mathematical}
+Shannon, C.~E. (2001).
+\newblock A mathematical theory of communication.
+\newblock {\em ACM SIGMOBILE Mobile Computing and Communications
+  Review\/},~{\em 5\/}(1), 3--55.
+
 \end{thebibliography}

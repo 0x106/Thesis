@@ -1,4 +1,4 @@
-\chapter{Probability Theory}
+\chapter{Mathematical Preliminaries}
 \label{probability}
 
 
@@ -33,4 +33,39 @@ In the context of computer vision, for example, the sample space is defined by t
 \subsection{Random variables \& Distributions}
 
 (2013durretprobability)
-Given our probability space defined earlier we now turn to the definition of a random variable and its associated distribution. Formally, a random variable $X$ is a function that maps a sample space to the space of real numbers, i.e. $X\: : \: \Omega \rightarrow \mathbb{R}$. 
+Given our probability space we define a random variable $X$ to be a function that maps the sample space to some measure space, often the space of real numbers, i.e. $X\: : \: \Omega \rightarrow \mathbb{R}$. The random variable $X$ is then said to induce a distribution on $\mathbb{R}$ by letting the probability that $X = a$ be the measure of the set $\{\omega \in \Omega : X(\omega) = a\}$, which is denoted by $P(X = a)$. Intuitively, a random variable is an entity that can take on the value of any element of the sample space with probability given by $\mathcal{P}$. Drawing a single sample from a distribution is then akin to selecting a particular value for the random variable, according to the probability space. In this work we will denote by $P(x)$ the probability that $X$ takes on the particular value $x$, i.e. that $P(X = x)$. 
+
+We may choose our random variable to be a gray scale image, for example. In the absence of any domain information it may be the case that every pixel value is equally likely to occur, and therefore we describe our random variable as having a uniform distribution. In contrast, we may assume that our image is drawn from a set of images of the natural world, so that it may contain a plant or an animal. In this case there is some restriction on the particular pixel values that are likely to occur, and we therefore say that our random variable is governed by some unknown probability distribution function that we may wish to know more about. We may be interested in knowing, for instance, whether our image contains a kiwi (reference). In our sample space from which we draw images of the natural world there is a probability function that describes the particular configurations of pixels that give rise to images that appear to be kiwi's. Given an image, we may wish to know whether the distribution that generated the current image is equivalent to the true distribution that generates images of kiwi's. This example is obviously far from trivial, as one cannot simply prescribe a function for describing any and all flightless birds from New Zealand. Describing probability functions and their relationship to each other has been the subject of an extraordinary amount of work. In computer science we typically call this problem pattern recognition, which reflects the fact that our goal is to detect patterns and make inferences on the state of the world. 
+
+\subsection{Moments}
+
+In order to understand probability distribution functions we need a language to describe them. This is achieved by computing the \textit{moments} of the distribution. For a discrete univariate probability density function, with an expected value $\mu_1$, the $n^{th}$ moment of the distribution is given by
+
+\begin{equation}
+\mu_n = \sum_{i=1}{(x_i - \mu_1)^{n}P(x_i)}.
+\end{equation}
+
+\noindent The expectation value, or first moment, of the distribution is given by
+
+\begin{equation}
+\mu_1 = \sum_{i=1}{x_i P(x_i)},
+\end{equation}
+
+\noindent which is the sum of the individual elements, weighted by their respective probabilities. For a sample of size $N$ the arithmetic mean is given by 
+
+\begin{equation}
+\bar{x} = \frac{1}{N}\sum_{i=1}{x_i}.
+\end{equation}
+
+\noindent The second moment of the distribution, is given by
+
+\begin{equation}
+\mu_2 = \sum_{i=1}{(x_i - \mu_1)^{2}P(x_i)},
+\end{equation}
+
+\noindent which is the expected value of the squared deviation from the mean. For a discrete sample the second moment is defined as the variance and is given by 
+
+\begin{equation}
+\sigma = \frac{1}{N-1}\sum_{i=1}{(x_i - \bar{x})}.
+\end{equation}
+

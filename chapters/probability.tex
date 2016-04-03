@@ -1,5 +1,5 @@
 \chapter{Mathematical Preliminaries}
-\label{probability}
+\label{mathbasics}
 
 
 The prinicple contribution of this thesis is to demonstate the utility of probability and information theory measures for addressing the correspondence problem in certain computer vision applications. In particular we will examine how the \textit{mutual information} (MI) and the \textit{Hilbert Schmidt independence criterion} (HSIC) can be used to evaluate the relationship between two objects. We begin with an introduction to key concepts in probability theory, then demonstrate how these concepts are central to the development of information theory. We conclude with a discussion of the mutual information. In the following chapter we introduce the reader to Hilbert spaces, then demonstrate how Hilbert spaces relate to earlier concepts in probability and information theory. 
@@ -8,7 +8,7 @@ The prinicple contribution of this thesis is to demonstate the utility of probab
 
 \subsection{Probability spaces}
 
-A probability space is a triple $(\Omega, \mathcal{F}, \mathcal{P})$ where $\Omega$ is a sample, or outcome space, $\mathcal{F}$ is the event space, and $\mathcal{P} : \mathcal{F} \rightarrow \mathbb{R}$ is a function that maps events to probabilities. The sample space refers to the set of all outcomes that could occur, while the element $A \in \mathcal{F}$ is a subset of the event space such that $A_i \subseteq \Omega$. The function $\mathcal{P} : \mathcal{F} \rightarrow \mathbb{R}$ assigns a value to elements of the event space that describe the likelihood of that event occuring. The probability function must satisfy the following properties (2013grayentropy):
+A probability space is a triple $(\Omega, \mathcal{F}, P)$ where $\Omega$ is a sample, or outcome space, $\mathcal{F}$ is the event space, and $P : \mathcal{F} \rightarrow \mathbb{R}$ is a function that maps events to probabilities. The sample space refers to the set of all outcomes that could occur, while the element $A \in \mathcal{F}$ is a subset of the event space such that $A_i \subseteq \Omega$. The function $P : \mathcal{F} \rightarrow \mathbb{R}$ assigns a value to elements of the event space that describe the likelihood of that event occuring. The probability function must satisfy the following properties (2013grayentropy):
 
 \begin{itemize}
 	\item \textit{nonnegative:} 
@@ -33,7 +33,7 @@ In the context of computer vision, for example, the sample space is defined by t
 \subsection{Random variables \& Distributions}
 
 (2013durretprobability)
-Given our probability space we define a random variable $X$ to be a function that maps the sample space to some measure space, often the space of real numbers, i.e. $X\: : \: \Omega \rightarrow \mathbb{R}$. The random variable $X$ is then said to induce a distribution on $\mathbb{R}$ by letting the probability that $X = a$ be the measure of the set $\{\omega \in \Omega : X(\omega) = a\}$, which is denoted by $P(X = a)$. Intuitively, a random variable is an entity that can take on the value of any element of the sample space with probability given by $\mathcal{P}$. Drawing a single sample from a distribution is then akin to selecting a particular value for the random variable, according to the probability space. In this work we will denote by $P(x)$ the probability that $X$ takes on the particular value $x$, i.e. that $P(X = x)$. 
+Given our probability space we define a random variable $X$ to be a function that maps the sample space to some measure space, often the space of real numbers, i.e. $X\: : \: \Omega \rightarrow \mathbb{R}$. The random variable $X$ is then said to induce a distribution on $\mathbb{R}$ by letting the probability that $X = a$ be the measure of the set $\{\omega \in \Omega : X(\omega) = a\}$, which is denoted by $P(X = a)$. Intuitively, a random variable is an entity that can take on the value of any element of the sample space with probability given by $P$. Drawing a single sample from a distribution is then akin to selecting a particular value for the random variable, according to the probability space. In this work we will denote by $P(x)$ the probability that $X$ takes on the particular value $x$, i.e. that $P(X = x)$. Given two random variables, $X$, and $Y$, we can define the joint probability $P(X,Y)$ to be the probability distribution for the set of $N$ ordered pairs $\{(x_i,y_i) : x_i \in X, y_i \in Y\}$.
 
 We may choose our random variable to be a gray scale image, for example. In the absence of any domain information it may be the case that every pixel value is equally likely to occur, and therefore we describe our random variable as having a uniform distribution. In contrast, we may assume that our image is drawn from a set of images of the natural world, so that it may contain a plant or an animal. In this case there is some restriction on the particular pixel values that are likely to occur, and we therefore say that our random variable is governed by some unknown probability distribution function that we may wish to know more about. We may be interested in knowing, for instance, whether our image contains a kiwi (reference). In our sample space from which we draw images of the natural world there is a probability function that describes the particular configurations of pixels that give rise to images that appear to be kiwi's. Given an image, we may wish to know whether the distribution that generated the current image is equivalent to the true distribution that generates images of kiwi's. This example is obviously far from trivial, as one cannot simply prescribe a function for describing any and all flightless birds from New Zealand. Describing probability functions and their relationship to each other has been the subject of an extraordinary amount of work. In computer science we typically call this problem pattern recognition, which reflects the fact that our goal is to detect patterns and make inferences on the state of the world. 
 
@@ -68,4 +68,11 @@ In order to understand probability distribution functions we need a language to 
 \begin{equation}
 \sigma = \frac{1}{N-1}\sum_{i=1}{(x_i - \bar{x})}.
 \end{equation}
+
+\section{Information Theory}
+
+Since Claude Shannon's seminal 1948 paper "A Mathematical Theory of Communication", the field of information theory has developed rapidly. [Give some examples etc].
+
+Information theory was originally intended 
+
 

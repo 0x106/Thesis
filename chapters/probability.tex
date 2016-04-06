@@ -33,7 +33,7 @@ In the context of computer vision, for example, the sample space is defined by t
 \subsection{Random variables \& Distributions}
 
 (2013durretprobability)
-Given our probability space we define a random variable $X$ to be a function that maps the sample space to some measure space, often the space of real numbers, i.e. $X\: : \: \Omega \rightarrow \mathbb{R}$. The random variable $X$ is then said to induce a distribution on $\mathbb{R}$ by letting the probability that $X = a$ be the measure of the set $\{\omega \in \Omega : X(\omega) = a\}$, which is denoted by $P(X = a)$. Intuitively, a random variable is an entity that can take on the value of any element of the sample space with probability given by $P$. Drawing a single sample from a distribution is then akin to selecting a particular value for the random variable, according to the probability space. In this work we will denote by $P(x)$ the probability that $X$ takes on the particular value $x$, i.e. that $P(X = x)$. Given two random variables, $X$, and $Y$, we can define the joint probability $P(X,Y)$ to be the probability distribution for the set of $N$ ordered pairs $\{(x_i,y_i) : x_i \in X, y_i \in Y\}$.
+Given our probability space we define a random variable $\mathcal{X}$ to be a function that maps the sample space to some measure space, often the space of real numbers, i.e. $\mathcal{X}\: : \: \Omega \rightarrow \mathbb{R}$. The random variable $\mathcal{X}$ is then said to induce a distribution on $\mathbb{R}$ by letting the probability that $X = a$ be the measure of the set $\{\omega \in \Omega : \mathcal{X}(\omega) = a\}$, which is denoted by $P(\mathcal{X} = a)$. Intuitively, a random variable is an entity that can take on the value of any element of the sample space with probability given by $P$. Drawing a single sample from a distribution is then akin to selecting a particular value for the random variable, according to the probability space. In this work we will denote by $P(x)$ the probability that $\mathcal{X}$ takes on the particular value $x$, i.e. that $P(\mathcal{X} = x)$. Given two random variables, $\mathcal{X}$, and $\mathcal{Y}$, we can define the joint probability $P(\mathcal{X},\mathcal{Y})$ to be the probability distribution for the set of $N$ ordered pairs $\{(x_i,y_i) : x_i \in \mathcal{X}, y_i \in \mathcal{Y}\}$.
 
 We may choose our random variable to be a gray scale image, for example. In the absence of any domain information it may be the case that every pixel value is equally likely to occur, and therefore we describe our random variable as having a uniform distribution. In contrast, we may assume that our image is drawn from a set of images of the natural world, so that it may contain a plant or an animal. In this case there is some restriction on the particular pixel values that are likely to occur, and we therefore say that our random variable is governed by some unknown probability distribution function that we may wish to know more about. We may be interested in knowing, for instance, whether our image contains a kiwi (reference). In our sample space from which we draw images of the natural world there is a probability function that describes the particular configurations of pixels that give rise to images that appear to be kiwi's. Given an image, we may wish to know whether the distribution that generated the current image is equivalent to the true distribution that generates images of kiwi's. This example is obviously far from trivial, as one cannot simply prescribe a function for describing any and all flightless birds from New Zealand. Describing probability functions and their relationship to each other has been the subject of an extraordinary amount of work. In computer science we typically call this problem pattern recognition, which reflects the fact that our goal is to detect patterns and make inferences on the state of the world. 
 
@@ -73,7 +73,9 @@ In order to understand probability distribution functions we need a language to 
 
 Since Claude Shannon's seminal 1948 paper "A Mathematical Theory of Communication", the field of information theory has developed rapidly. [Give some examples etc].
 
- Much of the early work concerning information theory was intended to be used to develop methods for telephony, and in particular to understand theoretical limits for which a message could be transmitted across a noisy channel. Shannon sought a function that would describe the uncertainty associated with a particular random variable. Shannon recognised that the \textit{entropy}, previously found in statistical mechanics as Boltmann's entropy equation (reference), was a suitable function for relating the probability distribution of a random variable to its uncertainty (\cite{shannon2001mathematical}). For a given random variable $X = \{x_1, x_2, ...., x_N\}$ with corresponding probability distribution $P = \{p_1, p_2, ...., p_N\}$ the Shannon entropy is 
+%$X = \{x_i\}$ and $Y = \{y_i\}$ from the random variables $\mathcal{X}$ and $\mathcal{Y}$
+
+ Much of the early work concerning information theory was intended to be used to develop methods for telephony, and in particular to understand theoretical limits for which a message could be transmitted across a noisy channel. Shannon sought a function that would describe the uncertainty associated with a particular random variable. Shannon recognised that the \textit{entropy}, previously found in statistical mechanics as Boltmann's entropy equation (reference), was a suitable function for relating the probability distribution of a random variable to its uncertainty (\cite{shannon2001mathematical}). For a sample $X = \{x_i\}$ from a random variable $\mathcal{X}$ with corresponding probability distribution $P = \{p_1, p_2, ...., p_N\}$ the Shannon entropy is 
 
 \begin{equation}
 	H(X) = \sum_i^N{p_i \: \text{log} \: (p_i)}.
@@ -88,6 +90,7 @@ Since Claude Shannon's seminal 1948 paper "A Mathematical Theory of Communicatio
 \noindent The Renyi entropy is defined for $\alpha = 2$ as 
 
 \begin{equation}
+	\label {renyientropy}
 	H_2(X) = - \text{log} \sum_i^N{{p_i}^2}.
 \end{equation}
 
@@ -97,7 +100,11 @@ Since Claude Shannon's seminal 1948 paper "A Mathematical Theory of Communicatio
 	H(X, Y) = \sum_i^N\sum_k^N{p_{i,k} \: \text{log} \: (p_{i,k})},
 \end{equation}
 
-\noindent where $p_{i,k} = P(x_i,y_k)$. One of the key characteristics of the entropy is that it is minimised for events that are either very likely or very unlikely to occur. As a consequence, the entropy is maximised when we are most uncertain about the outcome of an event. Given a Bernoulli trial (such as flipping a coin) the entropy is maximised when the probability of either outcome is equal, as can be seen in (bernoulli entropy figure). 
+\noindent where $p_{i,k} = P(x_i,y_k)$ and $Y = \{y_i\}$ is a sample from the random variable $\mathcal{Y}$. One of the key characteristics of the entropy is that it is minimised for events that are either very likely or very unlikely to occur. As a consequence, the entropy is maximised when we are most uncertain about the outcome of an event. Given a Bernoulli trial (such as flipping a coin) the entropy is maximised when the probability of either outcome is equal, as can be seen in (bernoulli entropy figure). 
+
+%\begin{figure}
+%	include '~/Desktop/Thesis/Thesis/figureCode/bernoulliEntropy.png'
+%\end{figure}
 
 %Note that when $X$ and $Y$ are independent, then we have that $p_{i,k} = p_ip_k$, i.e. that the joint probability of $x_i$ and $y_k$ is equal to the product of their respective probabilities. This means that at independence $H(i,k) = $ 
 
@@ -114,10 +121,29 @@ The mutual information is the reduction in uncertainty in $X$, given observation
 	I(X, Y) = \sum_i^N\sum_k^N{p_{i,k} \: \text{log} \: (\frac{p_{i,k}}{p_ip_k})},
 \end{equation}
 
-\noindent which is zero if and only if $X$ and $Y$ are independent, i.e. if and only if $p_{i,k} = p_i\:p_k$. 
+\noindent which is zero if and only if $\mathcal{X}$ and $\mathcal{Y}$ are independent, i.e. if and only if $p_{i,k} = p_i\:p_k$. 
 
 We can see that the mutual information will be greater when the respective entropies are maximised and when the joint entropy is maximised. Consider, for example, the outcome of two Bernoulli trials, such as flipping two coins $\text{T}_1$ and $\text{T}_2$ in succession. In order for the mutual information to be maximised we wish to reduce our uncertainty about the outcome of $\text{T}_2$ after observing $\text{T}_1$ by as much as possible. This occurs when our initial uncertainty, i.e our uncertainty about the outcome of $\text{T}_1$, is maximised and our uncertainty about $\text{T}_2$ given $\text{T}_1$ is minimised. We can see that this occurs, for example, when $P(\text{T}_1 = \textit{heads}) = 0.5$ and $P(\text{T}_1 = \textit{heads}, \text{T}_2 = \textit{heads}) = 1$ (with all other joint probabilities equal to zero).
 
+In order to compute the mutual information we need a mechanism to compute the probabilities $p_i$. It is common to use either histograms or Parzen window techniques to approximate the underlying densities. Given samples $X = \{x_i\}$ and $Y = \{y_i\}$, the histogram is constructed by tallying the frequency of occurance of each particular value. We then compute the entropy as per \ref{renyientropy}.
+
+We compute the Parzen density estimate of the mutual information according to the framework laid out by \cite{wells1996multi}. The Parzen window technique (\cite{duda2012pattern}) aproximates a probability distribution as a superposition of functions centered on each of the elements of a sample. Any differentiable function that integrates to one can be used in Parzen density estimation. In this work, as in \cite{wells1996multi}, we will use the Gaussian function:
+
+\begin{equation}
+	G_\psi(x) = \frac{1}{\sqrt[]{2\pi|\psi|}} \text{exp}\left(\frac{1}{2}x^\text{T}\psi^{-1}x\right),
+\end{equation}
+
+\noindent where $\psi$ is an empirically chosen covariance matrix. In order to approximate the entropy we create two new samples $A$ and $B$ from $X$, with $N_A, N_B < N$ their respective sizes. The entropy is approximated according to 
+
+\begin{equation}       
+	H(X) \approx H^*(X) = \frac{-1}{N_B} \sum_{x_i \in B}{\log \frac{1}{N_A} \sum_{x_j \in A}{G_\psi(x_i - x_j)}},
+\end{equation}
+
+whereby an individual probability is approximated according to
+
+\begin{equation}
+	p(x) \approx p^*(x) = \frac{1}{N_A} \sum_{x_j \in A}{G_\psi(x - x_j)}.
+\end{equation}
 
 In his paper, \cite{shannon2001mathematical} states that "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point".
 

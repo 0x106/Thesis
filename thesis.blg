@@ -9,45 +9,45 @@ Database file #1: thesis.bib
 Warning--no journal in rrnyi1961measures
 Warning--no number and no volume in rrnyi1961measures
 Warning--page numbers missing in rrnyi1961measures
-You've used 3 entries,
+You've used 5 entries,
             2855 wiz_defined-function locations,
-            631 strings with 5222 characters,
-and the built_in function-call counts, 1524 in all, are:
-= -- 121
-> -- 78
+            643 strings with 5543 characters,
+and the built_in function-call counts, 3081 in all, are:
+= -- 231
+> -- 234
 < -- 0
-+ -- 20
-- -- 30
-* -- 108
-:= -- 303
-add.period$ -- 8
-call.type$ -- 3
-change.case$ -- 15
-chr.to.int$ -- 3
-cite$ -- 6
-duplicate$ -- 51
-empty$ -- 111
-format.name$ -- 30
-if$ -- 264
++ -- 68
+- -- 78
+* -- 273
+:= -- 596
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 31
+chr.to.int$ -- 5
+cite$ -- 8
+duplicate$ -- 87
+empty$ -- 189
+format.name$ -- 86
+if$ -- 549
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 17
-num.names$ -- 30
-pop$ -- 13
+missing$ -- 7
+newline$ -- 27
+num.names$ -- 50
+pop$ -- 29
 preamble$ -- 1
-purify$ -- 36
+purify$ -- 66
 quote$ -- 0
-skip$ -- 53
+skip$ -- 88
 stack$ -- 0
-substring$ -- 78
-swap$ -- 15
+substring$ -- 137
+swap$ -- 26
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 50
+type$ -- 80
 warning$ -- 3
-while$ -- 32
+while$ -- 46
 width$ -- 0
-write$ -- 40
+write$ -- 66
 (There were 3 warnings)

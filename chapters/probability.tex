@@ -111,7 +111,7 @@ Since Claude Shannon's seminal 1948 paper "A Mathematical Theory of Communicatio
 One of the principle measures to utilise the entropy is the mutual information (reference (shannon?)), defined by
 
 \begin{equation}
-	I(X, Y) = H(X) + H(Y)  - H(X, Y).
+	I(X, Y) = H(X) + H(Y)  - H(X, Y).0
 \end{equation}
 
 The mutual information is the reduction in uncertainty in $X$, given observations of $Y$ (and vice versa). Notably, the mutual information can be used to characterise the dependency between $X$ and $Y$. We can express the mutual information in terms of probabilities as 
@@ -148,6 +148,39 @@ whereby an individual probability is approximated according to
 In his paper, \cite{shannon2001mathematical} states that "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point".
 
 
+\section{Functional Analysis}
+
+The principle theoretical framework we are using in this thesis is that of reproducing kernel Hilbert spaces (RKHS). Specifically, we are interested in the Hilbert-Schmidt independence criterion (HSIC), which measures the cross-covariance between two RKHS's associated with two random variables. We begin this section with an introduction to Hilbert spaces and to the more general theory of a function space. We then introduce the reproducing property and demonstrate its utility in evaluating functions from a Hilbert space. Finally, we discuss how the theory of RKHS motivates the use of the HSIC to measure independence.  
+
+\subsection{Hilbert spaces}
+
+Most readers will be familiar with the concept of the space of real numbers, $\mathcal{R}$, which is an example of a vector space. We can characterise this space as a set of dimensions, whereby points in the space take on a single real value from each of the dimensions and for which operations such as addition and scalar multiplication are permitted. Furthermore, we can endow points in the space with certain properties, such as a norm, which typically represents the size, or magnitude of the vector from the origin to the point. Interestingly, we can also represent \textit{functions} as a vector space. Specifically, a function space $\mathcal{F}$ is defined as a collection of functions which supports the following definitions:
+
+\theoremstyle{definition}
+\begin{definition}
+(from gdurret03)
+An inner product is a function $\langle \cdot, \cdot\rangle : \mathcal{F} \times \mathcal{F} \rightarrow \mathcal{R}$ that satisfies, for every $f, g \in \mathcal{F}$ and $\alpha \in \mathcal{R}$:
+\begin{itemize}
+\item {Symmetric: $\langle f, g\rangle = \langle g, f\rangle$}
+\item {Linear: $\langle f, g\rangle = \langle g, f\rangle$}
+\item {Symmetric: $\langle f, g\rangle = \langle g, f\rangle$}
+\end{itemize}
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}
+(from gdurret03)
+A norm is a non-negative function $\langle \cdot, \cdot\rangle : \mathcal{F} \times \mathcal{F} \rightarrow \mathcal{R}$ that satisfies, for every $f, g \in \mathcal{F}$ and $\alpha \in \mathcal{R}$:
+\begin{itemize}
+\item {Symmetric: $\langle f, g\rangle = \langle g, f\rangle$}
+\item {Symmetric: $\langle f, g\rangle = \langle g, f\rangle$}
+\item {Symmetric: $\langle f, g\rangle = \langle g, f\rangle$}
+\end{itemize}
+\end{definition}.
+
+Note that there exist a rich class of both inner products and norms that characterise many different types of spaces. The Euclidean norm, $||x|| = \sqrt{\sum{x_i}^2}$, and the Euclidean dot product $\langle x, x\rangle = xx^T$ are simple examples. It is important to note that dealing with the abstract notion of a norm or inner product between functions is no more trivial in theory than dealing with the norm or inner product between vectors of real numbers (although it may well be in practice). 
+
+In this work we consider a function space known as a Hilbert space. 
 
 
 

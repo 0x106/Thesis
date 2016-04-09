@@ -3,6 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: chapters/outline.aux
 A level-1 auxiliary file: chapters/probability.aux
+A level-1 auxiliary file: chapters/poseEstimation.aux
 The style file: otago.bst
 A level-1 auxiliary file: appendices.aux
 Database file #1: thesis.bib
@@ -11,7 +12,7 @@ Warning--no number and no volume in rrnyi1961measures
 Warning--page numbers missing in rrnyi1961measures
 You've used 5 entries,
             2855 wiz_defined-function locations,
-            643 strings with 5543 characters,
+            644 strings with 5570 characters,
 and the built_in function-call counts, 3081 in all, are:
 = -- 231
 > -- 234

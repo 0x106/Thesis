@@ -20,6 +20,8 @@ From a formal perspective we use the following definition:
 Given an object represented as a graph over a collection of nodes, the object is rigid and non-articulated if the Euclidean distances between the nodes are fixed. A rigid object is articulated if the Euclidean distances between nodes are free to change, while the Geodesic distances on the mesh remain constant. 
 \end{definition}
 
+[actor -> graph -> model]
+
 Actors are represented as a graph $G = (V, E)$. We have that $V = \{v_i\}$ is a set of nodes, $E = \{e_{ij}\}$ is a set of edges and $e_{ij} > 0$ denotes an edge between node $i$ and node $j$. Our graph is weighted, such that that weight on each edge represents the Euclidean distance between it's two nodes, i.e. $e_{ij} = d(i,j)$. The geodesic distances between any two nodes is the sum of the edges that lie on the shortest path between them. Intuitively this works in the same way as a skeleton. At any point in time separate joints that are not connected through a bone may be any aribitrary Euclidean distance from each other. If we were to find the shortest path between the ends of each of our thumbs, however, we would find that the distance we travel along the bones remains constant at any point in time. A piece of future work, therefore, is to explore whether we can build an unsupervised model by exploiting this property. This idea will be discussed further in Chapter x.
 
 [probably a good place for a diagram]
@@ -32,9 +34,14 @@ Given a model of the actor, represented as a graph, how do we represent the pose
 
 We wish to find the current pose of the actor in every frame of the video. We are choosing in this work to rely on top-down approaches, whereby we place a model into the scene and record the degree to which it fits the image. We then adjust the pose of the model in such a way that after a certain number of iterations we can be confident the pose of the model will align with the true underlying actor. 
 
-We begin by specifying the true location of the actor in the first frame, and from this build our initial model of the actor. Evaluating the model at any given pose means sampling, for every point in the model, the image intensity at that pixel, the distance to the nearest edge and the optical flow information at that point. The similarity between any current pose of our model and the set of positive (or negative) examples is given by the Hilbert-Schmidt independence criterion, as outlined in section x. Using the HSIC as a measure of the similarity between two random variables is advantageous as it captures all of the functional dependencies between the two samples. 
+We begin by specifying the true location of the actor in the first frame, and from this build our initial model of the actor. Evaluating the model at any given pose means sampling, for every point in the model, the image intensity at that pixel, the distance to the nearest edge and the optical flow information at that point. The similarity between any current pose of our model and the set of positive (or negative) examples is given by the Hilbert-Schmidt independence criterion, as outlined in section x. Using the HSIC as a measure of the similarity between two random variables is advantageous as it captures all of the functional dependencies between the two samples. There are of course many other measures we could use for the similarity, such as the normalised cross correlation (NCC) and the mutual information. The NCC is a linear measure, however, and therefore fails to capture non-linear effects such as dynamic changes in lighting. This is significant, as it is rarely the case that positive changes in one variable directly correlate with positive changes in another variable (or negative changes). Changes tend to be subtle and difficult to discern. Indeed while humans are remarkably capable of identifying which objects are similar to another object, we still struggle to identify subtle differences between two samples. In theory the mutual information is the most robust measure for capturing and understanding these non-linear dependencies. The mutual information requires, however, that the underlying probability distributions of the sample from the random variable be estimated. This can be both computationally expensive and can lead to errors in the approximation. Notably, to represent a probability distribution with a histogram, we typically need the number of samples to be much greater than both the dimensionality of the features we are sampling and the size of their respective domains. We can refer to this problem as \textit{coverage} (curse of dimensionality?) which refers to the fact that we need enough samples to cover the domain of every dimension, otherwise the probability distribution can be unnecessarily concentrated in certain regions.
 
-[example of sampling procedure]
+
+
+[1. curse of dimensionality diagram?]
+[2. example of sampling procedure (intensities, edges etc)]
+[3. would be good to show example of the energy surface]
+[4. do a comparison of different optimisation procedures]
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 APR 2016 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 APR 2016 09:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -160,24 +160,31 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip50
 \dth@everypar=\toks28
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
 \c@definition=\count105
- (./thesis.aux
-(./chapters/outline.aux) (./chapters/probability.aux)
-(./chapters/poseEstimation.aux) (./appendices.aux))
+
+(./thesis.aux (./chapters/outline.aux) (./chapters/probability.aux)
+(./chapters/poseEstimation.aux) (./chapters/objrecognition.aux)
+(./appendices.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -264,6 +271,9 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 11.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Try loading font information for U+stmry on input line 11.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 14.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
@@ -285,7 +295,31 @@ Chapter 3.
 
 
 
-] [13]) [14] (./thesis.bbl) [15
+] [13] [14]) [15]
+\openout2 = `chapters/objrecognition.aux'.
+
+ (./chapters/objrecognition.tex
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+[16
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+[17] [18]) [19] (./thesis.bbl) [20
 
 
 
@@ -295,31 +329,33 @@ Chapter 3.
 
 No file appendices.tex.
 (./thesis.aux (./chapters/outline.aux) (./chapters/probability.aux)
-(./chapters/poseEstimation.aux) (./appendices.aux)) ) 
+(./chapters/poseEstimation.aux) (./chapters/objrecognition.aux)
+(./appendices.aux)) ) 
 Here is how much of TeX's memory you used:
- 3018 strings out of 493089
- 39881 string characters out of 6134842
- 105836 words of memory out of 5000000
- 6426 multiletter control sequences out of 15000+600000
- 11457 words of font info for 42 fonts, out of 8000000 for 9000
+ 3178 strings out of 493089
+ 41948 string characters out of 6134842
+ 107383 words of memory out of 5000000
+ 6568 multiletter control sequences out of 15000+600000
+ 12069 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,26p,1935b,186s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (15 pages, 154556 bytes).
+ 38i,6n,26p,2573b,186s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary
+10.pfb>
+Output written on thesis.pdf (20 pages, 169793 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

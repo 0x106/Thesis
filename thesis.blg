@@ -4,6 +4,7 @@ The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: chapters/outline.aux
 A level-1 auxiliary file: chapters/probability.aux
 A level-1 auxiliary file: chapters/poseEstimation.aux
+A level-1 auxiliary file: chapters/objrecognition.aux
 The style file: otago.bst
 A level-1 auxiliary file: appendices.aux
 Database file #1: thesis.bib
@@ -12,7 +13,7 @@ Warning--no number and no volume in rrnyi1961measures
 Warning--page numbers missing in rrnyi1961measures
 You've used 5 entries,
             2855 wiz_defined-function locations,
-            644 strings with 5570 characters,
+            645 strings with 5597 characters,
 and the built_in function-call counts, 3081 in all, are:
 = -- 231
 > -- 234

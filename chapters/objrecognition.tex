@@ -1,0 +1,64 @@
+%pose estimation
+\chapter{Object recognition}
+\label{objrecognition}
+
+
+The problem of object recognition can generally be divided into two categories, that of image classification (does this image contain the object?) and localisation (where in the image is the object?). The latter naturally extends to tracking, which requires that objects be localised over consecutive frames. In all cases we must be given some form of reference to match. In the problem of classification this is often a class label on images containing the subject of interest. The problem is then to learn a function that will respond in a particular manner to previously unseen images containing that object. Image classification has been dealt with extensively and there exist robust algorithms that achieve very low errors on many classic datasets, for example convolutional deep neural networks (examples?). Although there exist many interesting problems in image classification it will remain outside the scope of this thesis. \\
+
+Image localisation extends classification by imposing an additional spatial constraint on the output. Rather than simply labelling the class of the image, we now require that the location of the object within the image be specified. In the simplest case, the target is defined by a (typically rectangular) template, from which we can extract a number of features. Tracking is then defined as the problem of finding, for every pair of frames in the video, the transformation that minimises the disagreement between templates in successive images.  \\
+
+\noindent State of the art trackers tend to adhere to the following paradigm:
+  
+\begin{enumerate}
+\item{In the first frame, specify the location of the target.}
+\item{Given this initial location, train a classifier.}
+\item{For each subsequent frame, find the most probable location of the target and update the classifier.}
+\end{enumerate}
+
+This approach is beneficial as it removes the need for an extensive library of labelled examples, which is often prohibitive to acquire, and it allows for the classifier to be trained in response to changes in the appearance of the target. One of the most acclaimed tracking algorithms, TLD (tracking-learning-detect), adheres to this online learning paradigm. TLD uses a labelled set of image patches, given by the initial location of the template, from which it trains a classifier. In subsequent frames the output of the tracking process is used to augment the set of labelled examples (both positive and negative) from which the performance of the classifier is improved. Given the initial bounding box location, () sample from the image to generate a number of base classifiers. The input to each classifier is a set of pixels, the locations of which are unique for every base classifier. That is, no two classifiers share any pixel locations in common. This is necessary to ensure the classifiers generate independent predictions. Each of the base classifiers is used to define an ensemble classifier. The ensemble consists of a posterior probability distribution $P_i(y | x)$ with $y \in \{p,n\}$, which defines the probability of observing any base classifier $i$. An observation of a base classifier is found by making comparisons between each of its pixels and concatenating the binary response into a code, $x$. The probability of a base classifier corresponding to a template patch is then defined as $P_i(y|x) = \frac{\#p}{\#p + \#n}$ where $\#p$ and $\#n$ are the number of positive and negative patches respectively that were observed for the given response.\\
+
+For any given bounding box location, TLD then generates a response for each base classifier, which indexes into the ensemble of predictors $P_i(y|x)$. The response to each predictor is summed and the image patch labelled a match if the response is greater than 50\%. For every frame, TLD tests every possible bounding box location across a number of scales and records the response of the ensemble. Every patch that scores above 50\% is recorded as a detected response. The final output patch is the detected response that lies closest to the output of the optical flow algorithm, which estimates the location of the target by finding the median of the motion vectors that originate in the previous bounding box. TLD is a powerful algorithm because it uses the location of the detected response that was accepted as the true location as a further positive example, and uses the detected examples that were not accepted as negative training examples. This means that over time the algorithm learns to discriminate between the true target and patches that lie close to the decision boundary. While TLD demonstrates superior performance on a number of training examples, it is not clear that updating the classifier based on the spatial layout of likely positive and negative examples is correct in principle. In particular, the use of heuristics to determine which samples to use to update the classifier can lead to incorrect patch labelling, which, over time, can cause the classifier to drift. Grabner (2008) address this problem by introducing a prior over likely patch labels, which they use to adapt an online boosting algorithm. Similarly, Saffari (2010) use a combination of multiple views and priors to enforce consistency amongst a set of classifiers. Leistner (2009) focus on developing a robust loss function to improve the classifier learning phase. In contrast, Hare (2011) learn a function that predicts the transformation of the target between frames, rather than training a classifier that will give a binary response on an input patch. Their method, which they term STRUCK, utilises a support vector machine (SVM) to estimate the location of the target in a given frame. They use the output of this estimation process to update the SVM, with additional budgeting constraints to restrict the growth in the number of support vectors. In this manner, STRUCK incorporates the patch labelling decision into the classification and learning process, rather than leaving it as an additional step after classification. 
+
+One of the principle limitations of the methods introduced above is speed. All of these algorithms rely on costly template representations and update strategies. Moreover, the prohibitive speeds affect the number of examples that can be used to update, affecting the overall learning quality. While these trackers can generally be formulated to operate in near real-time, it is possible to achieve significant improvements in speed without major precision sacrifices using \textit{correlation filters}. Correlation filters operate in a similar fashion to the trackers mentioned above, however they make use of the Fast Fourier Transform (FFT, ref) to improve the tracking speed. Given an input image $f$ and a 2D filter $h$, the output of the correlation process is an image $g$. In the ideal case $g$ would be specified by a Gaussian function with a peak at the true target location. The Convolution Theorem states that the correlation can be given by an element-wise multiplication in the Fourier domain (Bolme (2010)). Given the Fourier transforms $\text{F} = \mathcal{F}(f)$ and $\text{H} = \mathcal{F}(h)$ the correlation output is 
+
+\begin{equation}
+\text{G} = \text{F} \varodot \text{H}^*
+\end{equation}
+
+\noindent where $\varodot$ denotes element-wise multiplication and $^*$ the complex conjugate. The optimal filter given the training examples is 
+
+\begin{equation}
+\text{H}^* = \frac{\sum_i \text{G}_i \varodot \text{F}_i^*}{\sum_i \text{F}_i \varodot \text{F}_i^*}
+\end{equation}
+
+\noindent where $\text{F}_i$ is a training patch in the Fourier domain and $\text{G}_i$ is the desired response. For a full derivation of this expression please see Bolme (2010). The desired response is taken to be a 2D Gaussian centred on the training patch. The detected response in frame $t$ is used to update the filter, according to
+
+\begin{equation}
+\text{H}_t^* = \frac{\text{A}_t}{\text{B}_t}
+\end{equation}
+
+\begin{equation}
+\text{A}_t = \mu \text{G}_t \varodot \text{F}_t^* + (1 - \mu)\text{A}_{t-1}
+\end{equation}
+
+\begin{equation}
+\text{B}_t = \mu \text{F}_t \varodot \text{F}_t^* + (1 - \mu)\text{A}_{t-1}
+\end{equation}
+
+\noindent where $\mu$ is a learning rate and $\frac{\text{A}_t}{\text{B}_t}$ is an element-wise division.
+
+
+[how does struck perform against TLD? Is it weaker because it's computationally heavy and can't support as many features?]  
+
+[talk about that paper that describes the best trackers].
+
+One of the more subtle benefits of an algorithm such as TLD is that it is invariant to camera motion. This is due to the fact that TLD localises the target relative to the camera reference frame, rather than to a world frame. 
+
+
+
+
+
+
+
+
+

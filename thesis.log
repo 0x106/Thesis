@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 APR 2016 09:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 APR 2016 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -169,7 +169,7 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 \c@definition=\count105
 
 (./thesis.aux (./chapters/outline.aux) (./chapters/probability.aux)
-(./chapters/poseEstimation.aux) (./chapters/objrecognition.aux)
+(./chapters/objrecognition.aux) (./chapters/poseEstimation.aux)
 (./appendices.aux))
 \openout1 = `thesis.aux'.
 
@@ -287,19 +287,10 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 ] [6] [7]
 [8] [9] [10]) [11]
-\openout2 = `chapters/poseEstimation.aux'.
-
- (./chapters/poseEstimation.tex
-Chapter 3.
-[12
-
-
-
-] [13] [14]) [15]
 \openout2 = `chapters/objrecognition.aux'.
 
  (./chapters/objrecognition.tex
-Chapter 4.
+Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
@@ -310,7 +301,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[16
+[12
 
 
 
@@ -319,7 +310,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[17] [18]) [19] (./thesis.bbl) [20
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+[15]) [16]
+\openout2 = `chapters/poseEstimation.aux'.
+
+ (./chapters/poseEstimation.tex
+Chapter 4.
+[17
+
+
+
+] [18] [19]) [20] (./thesis.bbl) [21
 
 
 
@@ -329,12 +339,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
 No file appendices.tex.
 (./thesis.aux (./chapters/outline.aux) (./chapters/probability.aux)
-(./chapters/poseEstimation.aux) (./chapters/objrecognition.aux)
+(./chapters/objrecognition.aux) (./chapters/poseEstimation.aux)
 (./appendices.aux)) ) 
 Here is how much of TeX's memory you used:
  3178 strings out of 493089
  41948 string characters out of 6134842
- 107383 words of memory out of 5000000
+ 108383 words of memory out of 5000000
  6568 multiletter control sequences out of 15000+600000
  12069 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -352,10 +362,10 @@ y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary
 10.pfb>
-Output written on thesis.pdf (20 pages, 169793 bytes).
+Output written on thesis.pdf (21 pages, 172500 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

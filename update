@@ -1,10 +1,35 @@
 #! /bin/bash
 
-echo '---> Performing a Thesis update.'
-echo '---> Any local changes must be _manually_ added and committed'
+while [[ $# > 1 ]]
+do
+key="$1"
 
-#git add chapters/outline.tex
-#git commit -m "Regular update"
+case $key in
+    -m)
+    COMMIT_MESSAGE="$2"
+    shift
+    ;;
+    -c)
+    CHECKOUT="$2"
+    shift
+    ;;
+esac
+done
+
+echo 'Staging all files..'
+git add *
+git add chapters/*
+
+echo 'committing with message:'
+echo $COMMIT_MESSAGE
+
+git commit -m $COMMIT_MESSAGE
+
+echo 'Checkout master..'
 git checkout master
+
+echo 'Pulling..'
 git pull --rebase thesis-remote-origin master
+
+echo 'Pushing..'
 git push thesis-remote-origin master

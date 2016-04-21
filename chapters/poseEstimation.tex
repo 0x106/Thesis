@@ -58,9 +58,72 @@ The most effective mechanism for estimating the pose of an articulated actor is 
 
 Why is it that we can't use a bounding box representaion to track articulated objects? Imagine, for instance, that we are using an object localisation framework, such as TLD or STRUCK, and are using only a template of the object learnt in the first frame. Two major problems arise in this paradigm. The first is that our object will naturally occupy only a portion of the bounding box. Tracking a person with their arms outstretched, for instance, requires a bounding box that naturally includes a large background region in the area under the arms. This background region is included as part of the foreground region and therefore affects tracking performance. Such a tracker would almost immediately fail, even if the actor kept her arms in the same relative position throughout the sequence, as the classification process would need to match the initial background (that was included as part of the foreground) with new background regions. We therefore need a tracking framework that allows for regions other than rectangular bounding boxes to be tracked. 
 
-The most common framework for pose estimation of articulated objects is known as \textit{generative tracking}, or alternatively as model-based tracking or analysis-by-synthesis. Generative tracking attempts to minimise a model-to-image cost function for every frame in the video. The three main components of any generative tracking framework are the choice of model, the cost function, and the optimisation procedure. Popular generative tracking schemes include PoseCut, which jointly segments an image and optimises the pose of the actor in each frame using conditional random fields (). Similarly, (vineet and sheasby) jointly estimate the optimal segmentation, pose and depth of an articulated actor using a conditional random field. Oikonomidis (hand occlusions) demonstrate a generative technique that matches hand poses to edge and colour maps extracted from an image, while simultaneously preventing any two rigid bodies from intersecting. This method therefore solves for the optimal pose in the presence of physical objects that restrict the space of poses of the hand. 
+The most common framework for pose estimation of articulated objects is known as \textit{generative tracking}, or alternatively as model-based tracking or analysis-by-synthesis (surveys - moeslund, erol, poppe, sigal). Generative tracking attempts to minimise a model-to-image cost function for every frame in the video. The three main components of any generative tracking framework are the choice of model, the cost function, and the optimisation procedure. Popular generative tracking schemes include PoseCut, which jointly segments an image and optimises the pose of the actor in each frame using conditional random fields (). Similarly, (vineet and sheasby) jointly estimate the optimal segmentation, pose and depth of an articulated actor using a conditional random field. Oikonomidis (hand occlusions) demonstrate a generative technique that matches hand poses to edge and colour maps extracted from an image, while simultaneously preventing any two rigid bodies from intersecting. This method therefore solves for the optimal pose in the presence of physical objects that restrict the space of poses of the hand. Elhayek () present an elegant solution for finding the optimal skeletal and camera parameters by introducing a Sum of Gaussians body model (). By jointly solving for both the camera and pose parameters Elhayek are able to track moving targets from multiple moving, and therefore uncalibrated, cameras. This is significant as camera calibration is a costly process that generally restricts multi-camera pose estimation to cases where the relative position between the cameras is fixed, for instance in stereo reconstruction methods. In contrast, methods for monocular target tracking are prevalent, for example Andriluka (monocular2010) which combines a discriminative 2D people detector and a parts based generative tracking framework to track multiple articulated objects with a single camera. Parts based methods are becoming increasingly common as they separate the recognition problem into multiple subcomponents, each of which are theorised to be easier to solve. Kwon (2013), for instance, treat non-rigid objects as a collection of patches. The pose is represented by the topology between patches and an online model is used to learn appearance classifiers for each of the patches over time. Kiefel \& Gehler (2014) use a conditional markov random field to model the local appearance and the spatial configuration of consituent body parts. These studies are an example of bottom-up, or \textit{discriminative} techniques for pose estimation. They are exemplified by a learning stage that constructs a database or model of training examples. 
 
-Pose estimation frameworks generally fall into two categories: generative and discriminative, which can also be called top-down and bottom-up respectively. 
+Pose estimation frameworks typically use a mixture of ideas from two categories: generative and discriminative, which can also be called top-down and bottom-up respectively. 
+
+Pose estimation techniques can be classified as either \textit{generative}, \textit{discriminative}, or a mixture of the two. Discriminative techniques closely resemble object recognition approaches discussed in the previous chapter. They are characterised by an initial training phase, from which a model is learnt that can be used to output likely 3D poses from images. Conversely, generative techniques optimise the pose of a model that best fits an image. Discriminative techniques are therefore sometimes known as \textit{bottom-up} while generative techniques are known as \textit{top-down}. Discriminative techniques are powerful because they can incoporate a great deal of prior knowledge about shape (Agarwal triggs), appearance (Grabner 2006, andrilukar, kiefel gehler) and motion (akhter) of the target0. This becomes limiting, however, as offline learning can be costly, it can be difficult to acquire training databases and the algorithm can be prone to overfitting. This is especially problematic for pose estimation frameworks due to the typically high number of degrees of freedom in the human hand or body, for example. Similarly, articulated objects can undergo signifiant appearance changes and are often self-occluded. In contrast, generative techniques require only a simple model of the target and a function that measures the cost of projecting a given pose of the model into the image. Generative techniques can therefore be adapted to a much wider range of problems and have a greater degree of flexibility in dealing with new and previously unseen situations. They obviously suffer from local minima, especially in regions of high clutter, and can be inefficient in monocular camera systems. 
+
+Perhaps the most representative example of discriminative tracking comes from (2003athitsosestimating), who use a database of synthetic hand images to estimate the 3D pose of a hand in an image. Their database is constructed by generating an extensive range of synthetic hand images, in different poses and for different camera viewpoints. Given any input image the distance to the nearest database image is given as the Chamfer distance between edge maps in the respective images. A similar view based representation was developed by (1998blackeigentracking) who construct a low-dimensional set of basis images by finding the eigenvectors of a set of training images. Tracking is then formulated as a least-squares matching problem. Agarwal and Triggs automatically extract shape descriptor vectors from specific pose silhouettes against which they perform regression, using known motion capture joint angles as the desired output. Pose estimation is performed in subsequent frames by passing the sampled shape descriptors through the regression framework to uncover the 3D joint angles. A number of authors have also proposed techniques that estimate temporal trajectories of an actor by matching to known motion databases. In particular, (2015akhter3dpose) develop a prior model of pose dependent joint limits from a motion capture dataset. They then use this prior to help disambiguate between the multiple ambiguous 3D poses that arise from 2D points observations. (2014zhouspatiotemporal) adopt a similar approach, whereby they learn offline a kinematic motion model 
+
+There also exist a subset of discriminative tracking techniques that learn a model configuration from 2D tracking data. This problem is often known as structure from motion. Taycher (2009) learn the topology of an articulated structure by observing the rigid motion of body segments. They use a probabilistic formulation from which they can recover a tree-structure through factorisation. Ross (2008) extend Taycher by learning both the association of tracked points to body segments and the connections between segments. Structure from motion for a single moving rigid object can be obtained by a factorisation of the matrix of feature point trajectories using singular value decomposition (Tomasi Kanade 2002). Costeira and Kanade 1996 extend this solution to deal with multiple objects by introducing a greedy algorithm that groups feature trajectories before factorisation. Unfortunately, however, Yan and Pollefeys (2005a) have shown that the motion of two groups of points is linearly dependent if the two groups are physically connected. This is due to the fact that the motion subspaces of each of the groups intersect which therefore prevents the feature trajectories from being grouped. Yan and Pollefeys introduce an approach that first segments the feature point trajectories into a collection of rigid parts and then constructs an affinity matrix that describes the likelihood that any two parts are connected by a joint. They then solve for the location of the joints by constructing a spanning tree that connects parts with maximum affinity. The approach of Ross (2008) is similar to Yan and Pollefeys. They use a graphical model to assign trajectories to parts and to represent connections between segments and then iterate over different assignments, using expectation maximisation to find the optimal assignments of part and joint labels.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

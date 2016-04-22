@@ -16,6 +16,9 @@ case $key in
 esac
 done
 
+echo 'Building Thesis..'
+make
+
 echo 'Staging all files..'
 git add *
 git add chapters/*

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 APR 2016 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 APR 2016 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,7 +364,7 @@ Here is how much of TeX's memory you used:
  6568 multiletter control sequences out of 15000+600000
  12069 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,26p,2731b,186s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,6n,26p,2918b,186s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
@@ -378,7 +378,7 @@ y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary
 10.pfb>
-Output written on thesis.pdf (26 pages, 186425 bytes).
+Output written on thesis.pdf (26 pages, 187251 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream

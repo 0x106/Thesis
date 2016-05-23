@@ -1,55 +1,55 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
-A level-1 auxiliary file: chapters/outline.aux
 A level-1 auxiliary file: chapters/probability.aux
 A level-1 auxiliary file: chapters/objrecognition.aux
 A level-1 auxiliary file: chapters/poseEstimation.aux
+A level-1 auxiliary file: chapters/activityRecognition.aux
 The style file: otago.bst
 A level-1 auxiliary file: appendices.aux
 Database file #1: thesis.bib
 Warning--no journal in rrnyi1961measures
 Warning--no number and no volume in rrnyi1961measures
 Warning--page numbers missing in rrnyi1961measures
-You've used 5 entries,
+You've used 4 entries,
             2855 wiz_defined-function locations,
-            645 strings with 5597 characters,
-and the built_in function-call counts, 3081 in all, are:
-= -- 231
-> -- 234
+            639 strings with 5515 characters,
+and the built_in function-call counts, 2609 in all, are:
+= -- 198
+> -- 208
 < -- 0
-+ -- 68
-- -- 78
-* -- 273
-:= -- 596
-add.period$ -- 14
-call.type$ -- 5
-change.case$ -- 31
-chr.to.int$ -- 5
-cite$ -- 8
-duplicate$ -- 87
-empty$ -- 189
-format.name$ -- 86
-if$ -- 549
++ -- 62
+- -- 68
+* -- 242
+:= -- 498
+add.period$ -- 11
+call.type$ -- 4
+change.case$ -- 26
+chr.to.int$ -- 4
+cite$ -- 7
+duplicate$ -- 69
+empty$ -- 153
+format.name$ -- 76
+if$ -- 468
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 27
-num.names$ -- 50
-pop$ -- 29
+missing$ -- 5
+newline$ -- 22
+num.names$ -- 40
+pop$ -- 23
 preamble$ -- 1
-purify$ -- 66
+purify$ -- 54
 quote$ -- 0
-skip$ -- 88
+skip$ -- 70
 stack$ -- 0
-substring$ -- 137
-swap$ -- 26
+substring$ -- 117
+swap$ -- 21
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
+type$ -- 70
 warning$ -- 3
-while$ -- 46
+while$ -- 36
 width$ -- 0
-write$ -- 66
+write$ -- 52
 (There were 3 warnings)

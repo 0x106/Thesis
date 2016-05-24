@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 MAY 2016 12:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAY 2016 17:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -166,39 +166,76 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
-\c@definition=\count105
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
 
-(./thesis.aux (./chapters/probability.aux) (./chapters/objrecognition.aux)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count105
+\float@exts=\toks29
+\float@box=\box28
+\@float@everytoks=\toks30
+\@floatcapt=\box29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks31
+\c@algorithm=\count106
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count107
+\c@ALG@rem=\count108
+\c@ALG@nested=\count109
+\ALG@tlm=\skip51
+\ALG@thistlm=\skip52
+\c@ALG@Lnr=\count110
+\c@ALG@blocknr=\count111
+\c@ALG@storecount=\count112
+\c@ALG@tmpcounter=\count113
+\ALG@tmplength=\skip53
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+\c@definition=\count114
+ (./thesis.aux (./chapters/probability.aux) (./chapters/objrecognition.aux)
 (./chapters/poseEstimation.aux) (./chapters/activityRecognition.aux)
 (./appendices.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
+\scratchcounter=\count115
 \scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count109
+\scratchbox=\box30
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count118
 \MPscratchDim=\dimen115
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks30
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks33
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -341,11 +378,45 @@ tive track-ing comes from (2003athit-
 
  (./chapters/activityRecognition.tex
 Chapter 4.
-) [22
+[22
 
 
 
-] (./thesis.bbl) [23
+]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png, id=84, 1
+300.86pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png Grap
+hic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+getting_up.png used on input line 25.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png, id=86, 1300.8
+6pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png Graphic f
+ile (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+walks.png used on input line 30.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+ [23]
+[24 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>]
+[25 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>] [26]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.png, i
+d=102, 578.16pt x 433.62pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.p
+ng Graphic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.pn
+g>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+example_waveforms.png used on input line 70.
+(pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
+ [27 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.p
+ng>]) [28] (./thesis.bbl) [29
 
 
 
@@ -358,13 +429,13 @@ No file appendices.tex.
 (./chapters/poseEstimation.aux) (./chapters/activityRecognition.aux)
 (./appendices.aux)) ) 
 Here is how much of TeX's memory you used:
- 3173 strings out of 493089
- 41981 string characters out of 6134842
- 109348 words of memory out of 5000000
- 6563 multiletter control sequences out of 15000+600000
+ 3791 strings out of 493089
+ 51594 string characters out of 6134842
+ 119967 words of memory out of 5000000
+ 7158 multiletter control sequences out of 15000+600000
  12069 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,26p,2918b,186s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,6n,26p,2918b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
@@ -378,10 +449,10 @@ y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary
 10.pfb>
-Output written on thesis.pdf (23 pages, 180686 bytes).
+Output written on thesis.pdf (29 pages, 558073 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 153 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

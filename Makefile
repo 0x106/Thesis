@@ -22,7 +22,7 @@
 TITLE = thesis
 
 # Put the names of your separate chapter files here
-CHAPTERS = chapters/objrecognition.tex chapters/outline.tex chapters/probability.tex chapters/intro.tex chapters/literature.tex chapters/new_ideas.tex chapters/implementation.tex chapters/results.tex chapters/conclusion.tex chapters/abstract.tex chapters/acknowledgements.tex chapters/appendices.tex chapters/poseEstimation.tex
+CHAPTERS = chapters/activityRecognition.tex chapters/objrecognition.tex chapters/outline.tex chapters/probability.tex chapters/intro.tex chapters/literature.tex chapters/new_ideas.tex chapters/implementation.tex chapters/results.tex chapters/conclusion.tex chapters/abstract.tex chapters/acknowledgements.tex chapters/appendices.tex chapters/poseEstimation.tex
 
 # Uncommenting the following line will convert xfig files to pdf using fig2dev.
 # FIGFILES = ex1.fig ex2.fig

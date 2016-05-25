@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAY 2016 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 MAY 2016 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,11 +378,36 @@ tive track-ing comes from (2003athit-
 
  (./chapters/activityRecognition.tex
 Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
 [22
 
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png, id=84, 1
 300.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png Grap
@@ -390,8 +415,12 @@ hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-getting_up.png used on input line 25.
+getting_up.png used on input line 21.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png, id=86, 1300.8
 6pt x 755.2215pt>
@@ -400,23 +429,127 @@ ile (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-walks.png used on input line 30.
+walks.png used on input line 26.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
- [23]
-[24 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>]
-[25 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>] [26]
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.png, i
-d=102, 578.16pt x 433.62pt>
-File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.p
-ng Graphic file (type png)
 
-<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.pn
-g>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+[24 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+[25 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png, id=103, 130
+0.86pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png Graphic
+ file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-example_waveforms.png used on input line 70.
+var_med.png used on input line 74.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png, id=104, 5
+78.16pt x 433.62pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png Graph
+ic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+amplitude.png used on input line 87.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
- [27 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.p
-ng>]) [28] (./thesis.bbl) [29
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+[27]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png, id=108, 1300.8
+6pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png Graphic fi
+le (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+freq.png used on input line 94.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png, id=109,
+ 578.16pt x 433.62pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png Gra
+phic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+freq_single.png used on input line 99.
+(pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+[28 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>]
+[29 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+) [30 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png>]
+[31 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png>]
+(./thesis.bbl) [32
 
 
 
@@ -429,11 +562,11 @@ No file appendices.tex.
 (./chapters/poseEstimation.aux) (./chapters/activityRecognition.aux)
 (./appendices.aux)) ) 
 Here is how much of TeX's memory you used:
- 3791 strings out of 493089
- 51594 string characters out of 6134842
- 119967 words of memory out of 5000000
- 7158 multiletter control sequences out of 15000+600000
- 12069 words of font info for 45 fonts, out of 8000000 for 9000
+ 3813 strings out of 493089
+ 52487 string characters out of 6134842
+ 120000 words of memory out of 5000000
+ 7175 multiletter control sequences out of 15000+600000
+ 12690 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,6n,26p,2918b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
@@ -443,16 +576,17 @@ nts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary
-10.pfb>
-Output written on thesis.pdf (29 pages, 558073 bytes).
+cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary10.
+pfb>
+Output written on thesis.pdf (32 pages, 962021 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 173 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

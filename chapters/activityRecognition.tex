@@ -4,36 +4,28 @@
 
 \section{Introduction}
 
-In this section we turn to the problem of recognising and clustering various activities across a range of conditions. We describe an activity as a short sequence of motion, typically undertaken by a person, and captured by either video cameras or a motion capture system. Activity recognition is an important field of study, due to the growing demand for systems that can reliably infer behaviour in a range of settings. There are a wide variety of applications for activity recognition systems. For example in home care scenarios, where robots may be employed to care for the elderly or for the disabled. In home care, the primary consideration is monitoring the status of the patient, to infer, for example, whether they are injured or safe, whether they are cooking or excersing, and most importantly, whether their behaviour appears to be normal.
+In this section we turn to the problem of recognising and clustering various activities across a range of conditions. We describe an activity as a short sequence of motion, typically undertaken by a person, and captured by either video cameras or a motion capture system. Activity recognition is an important field of study, due to the growing demand for systems that can reliably infer behaviour in a range of settings. There are a wide variety of applications for activity recognition systems. For example in home care scenarios, where robots may be employed to care for the elderly or for the disabled. In home care, the primary consideration is monitoring the status of the patient, to infer, for example, whether they are injured or safe, whether they are cooking or excersing, and most importantly, whether their behaviour appears to be normal.\\
 
-In a similar fashion to previous sections, activity recognition may be used for gaming applications, for example to recognise particular movements that correspond to game commands or to infer the state of the user from their motion. 
+In a similar fashion to previous sections, activity recognition may be used for gaming applications, for example to recognise particular movements that correspond to game commands or to infer the state of the user from their motion. \\
 
-We may also wish to employ activity recognition systems at construction sites. In large workplaces there will be a large number of hazards, for example machinery operating, uncovered holes dug in the ground, and materials swinging through the air as it is transported. This clearly presents significant danger to people as they move about construction sites. It is desirable, therefore, to employ systems that are capable of inferring the trajectory and likely behaviour of people and machinery as they move around. Systems that can identify when someone is walking and discern some information from their gait may also be useful in biometric applications, for instance in security systems, or for use with autonomous vehicles to identify the behaviour of pedestrians.
-
-
-
-\section{Activity Recognition}
+We may also wish to employ activity recognition systems at construction sites. In large workplaces there will be a large number of hazards, for example machinery operating, uncovered holes dug in the ground, and materials swinging through the air as it is transported. This clearly presents significant danger to people as they move about construction sites. It is desirable, therefore, to employ systems that are capable of inferring the trajectory and likely behaviour of people and machinery as they move around. Systems that can identify when someone is walking and discern some information from their gait may also be useful in biometric applications, for instance in security systems, or for use with autonomous vehicles to identify the behaviour of pedestrians.\\
 
 
-\subsection{Synthetic Function Matching with HSIC}
+\section{Motion Capture Data}
 
-The principle contribution of this section is to demonstrate that our HSIC based measure provides a robust measure of the similarity between two arbitrary time-series signals. We demonstrate this capability with a series of examples on synthetic data, with a particular focus on the three main components of a signal, the frequency, the amplitude and the phase. Specifically, we show that our normalised measure is robust to changes in the amplitude, which the elementary HSIC is not. As a proof of concept we demonstrate that our measure could be used to re-construct a signal from data, in cases where Fourier based methods are not suitable. 
+We are interested in matching time-series signals of various human activities. We are using motion capture data from the Carnegie Mellon dataset, which includes a wide range of activities, for example: walking, running, dancing, climbing over obstacles, swimming motions, getting up off the ground and sweeping motions. The motion capture data contains the angle of each joint over time, as well as the spatial coordinates of a root node. In order to situate our synthetic examples, we first show some examples of real motion capture data. The first two examples, shown in Fig. \ref{getting_up} are of a subject getting up off the ground from a lying position. The second two examples, shown in Fig. \ref{walks} are of a subject walking in a normal fashion. The goal of our algorithm is to measure the similarity between any two motion inputs. We show that our HSIC measure is capable of discriminating between various motions, however we typically require that the motion is first projected into a lower dimensional space. Before we demonstrate our results we will first give an overview of principle component analysis.\\
 
-We are interested in matching time-series signals of various human activities. We are using motion capture data from the Carnegie Mellon dataset, which includes a wide range of activities, for example: walking, running, dancing, climbing over obstacles, swimming motions, getting up off the ground and sweeping motions. The motion capture data contains the angle of each joint over time, as well as the spatial coordinates of a root node. In order to situate our synthetic examples, we first show some examples of real motion capture data. The first two examples, shown in Fig. \ref{getting_up} are of a subject getting up off the ground from a lying position. The second two examples, shown in Fig. \ref{walks} are of a subject walking in a normal fashion. The goal of our algorithm is to measure the similarity between any two motion inputs. We show that our HSIC measure is capable of discriminating between various motions, however we typically require that the motion is first projected into a lower dimensional space. Before we demonstrate our results we will first give an overview of principle component analysis.
+In many cases our data will lie in a high-dimensional space. Our input motion capture data, for example, has 59 components, six of which describe the position of the root node over time, while the rest describe the angles of various body joints. There is one joint angle per degree of freedom for each particular joint, however not all joints have the full three degrees of freedom. The joint names and the numbers of degrees of freedom are specified in Fig. {mocap image}.\\
 
-\begin{figure}
+\begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png}
-\caption{Motion capture data for a subject as they rise from the ground in two different examples. The top row shows the position of the root node of the subject while the bottom row shows the data projected according to the PCA basis functions, for each of the first three most significant components. In each of the plots the blue trace is for the first example while the green trace is for the second example. The same subject performed both actions. The two motion examples are 3 and 4 for subject 140 of the CMU Mocap database. \label{getting_up}}
+\caption{Motion capture data for a subject as they rise from the ground in two 	different examples. The top row shows the position of the root node of the subject while the bottom row shows the data projected according to the PCA basis functions, for each of the first three most significant components. In each of the plots the blue trace is for the first example while the green trace is for the second example. The same subject performed both actions. The two motion examples are 3 and 4 for subject 140 of the CMU Mocap database. \label{getting_up}}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png}
 \caption{Motion capture data for a subject as they walk in two different examples. In both cases the subject walked for a short period in one direction and then turned and walked back. The top row shows the position of the root node of the subject while the bottom row shows the data projected according to the PCA basis functions, for each of the first three most significant components. In each of the plots the blue trace is for the first example while the green trace is for the second example. The same subject performed both actions. The two motion examples are 21 and 22 for subject 136 of the CMU Mocap database. \label{walks}}
 \end{figure}
-
-\subsection{Motion Capture Data}
-
-In many cases our data will lie in a high-dimensional space. Our input motion capture data, for example, has 59 components, six of which describe the position of the root node over time, while the rest describe the angles of various body joints. There is one joint angle per degree of freedom for each particular joint, however not all joints have the full three degrees of freedom. The joint names and the numbers of degrees of freedom are specified in Fig. {mocap image}.
 
 \subsection{Principle Component Analysis}
 
@@ -50,33 +42,82 @@ Y = V X.
 \label{PCA_compute}
 \end{equation}
 
-This method, however, only works efficiently in cases where the dimensionality of each sample is much lower than the number of samples available, i.e. when $n > p$. This is because the covariance matrix $X X^{T}$ becomes very large. 
+This method, however, only works efficiently in cases where the dimensionality of each sample is much lower than the number of samples available, i.e. when $n > p$. This is because the covariance matrix $X X^{T}$ becomes very large. \\
 
-It is often the case where the dimensionality of our samples is much greater than the number of samples available. We will see in later sections that this is the case for temporal synchronisation of videos. If we represent each frame of a video as a single vector then the dimensionality of each sample is equal to the number of pixels in the image. If our video is only 100 - 200 frames long, then we clearly have $p >> n$. In this situation we turn to an alternative method for estimating the principle components, as defined by reference. 
+It is often the case where the dimensionality of our samples is much greater than the number of samples available. We will see in later sections that this is the case for temporal synchronisation of videos. If we represent each frame of a video as a single vector then the dimensionality of each sample is equal to the number of pixels in the image. If our video is only 100 - 200 frames long, then we clearly have $p >> n$. In this situation we turn to an alternative method for estimating the principle components, as defined by reference. \\
 
-Since the number of samples is low we can efficiently compute the alternative covariance matrix $X^{T} X$ which is of size $n\:\:\text{x}\:\:n$. We then compute the eigenvalues and eigenvectors of this covariance matrix. The matrix $V$ is formed by stacking the eigenvectors in columns according to the size of the corresponding eigenvalues and can then be used as in Eq. \ref{PCA_compute}.
+Since the number of samples is low we can efficiently compute the alternative covariance matrix $X^{T} X$ which is of size $n\:\:\text{x}\:\:n$. We then compute the eigenvalues and eigenvectors of this covariance matrix. The matrix $V$ is formed by stacking the eigenvectors in columns according to the size of the corresponding eigenvalues and can then be used as in Eq. \ref{PCA_compute}.\\
 
-\subsection{Detecting Frequency}
 
-In this section we will be considering time-series functions of the form
+\section{Synthetic Function Matching with HSIC}
+
+The principle contribution of this section is to demonstrate that our HSIC based measure provides a robust measure of the similarity between two arbitrary time-series signals. We demonstrate this capability with a series of examples on synthetic data. As a further proof of concept we also demonstrate that our measure could be used to re-construct a signal from data, in cases where Fourier based methods are not suitable. \\
+
+We saw in Figs \ref{getting_up} and \ref{walks} that our input is a multi-dimensional time-series signal. The top rows of each of these figures are raw input data, while the bottom rows are the PCA transformed data. In each plot we have traced a single parameter from each of two motions. Our input is given by the variables $X = \{x_0, x_1, ..., x_n\}$ and $Y = \{y_0, y_1, ..., y_n\}$, where each of the $n$ samples $x_i$ and $y_i$ are vectors of length $m$. Each element of $x_i$ and $y_i$ gives the value of a single parameter at a single point in time. As usual we have that $\text{HSIC}(X, Y) = \frac{1}{n^2}\textbf{KHLH}$ where $\textbf{H}$ is a centering matrix and $\textbf{K}$ and $\textbf{L}$ are Gram matrices defined on $X$ an $Y$ respectively. As before, our kernel matrix is defined as
+
 
 \begin{equation}
-f(x) = \sum_i{a_i\sin(b_ix) + c_i\cos(d_ix)}
+\textbf{K}_{i,j} = k(x_i,y_j) = \exp^{-((x_i-y_j)\Sigma(x_i-y_j)^T)}
 \end{equation}
 
-\noindent where $a_i$ and $c_i$ are the magnitudes of the two components and $b_i$ and $d_i$ are the frequencies. We will not use this equation explicitly in our algorithm, however it is convenient for demonstrating the attributes of our algorithm.
+\noindent where $\Sigma$ is a covariance matrix. We show that in this format the HSIC will increase with increasing amplitude, which means that it will lead to situations where two signals are more similar to each other than either signal with itself. This is clearly undesirable, as we wish for signals to be most similar when they are identical. We therefore make a simple adjustment and introduce a new measure, which we term normalised Hilbert Schmidt independence criterion (NHSIC).
+
+Furthermore, using the normalised HSIC means that it is desirable but not necessary to estimate the covariance matrix from all the data, rather than as and when data becomes available. This may seem like a trivial statement to assert, however there are cases where the data is not available before computation begins. We may, for instance, wish to find the similarity between two videos, then some time later compare a third video. When we first . 
+
+
+
+ We define NHSIC between inputs $X$ and $Y$ as 
+
+\begin{equation}
+\text{HSIC}(X,Y) = \frac{\text{HSIC}(X,Y)}{\sqrt{\text{HSIC}(X,X)\text{HSIC}(Y,Y)}}
+\end{equation}
+
+\noindent which has the effect of scaling the HSIC result by the norm of each individual signal. \\
+
+As was mentioned previously, we are estimating our covariance matrix from the data available, rather than choosing it to be the median value, as is the case in other works. In Fig. \ref{var_med} we can see that this provides much more stable results. In the experiment that generated the results of Fig. \ref{var_med} we measured the NHSIC between a signal with a fixed amplitude and another signal as we varied its amplitude. In both cases the correct results were returned (at index 39) however the NHSIC curve is much smoother when using estimating the variance from the data, rather than using the median. This is extremely important, as we often wish to use optimisation schemes with the NHSIC as an energy measure. Optimisation is much easier to perform when the energy surface is smooth and does not contain local optima. \\
 
 \begin{figure}[h]
-\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.png}
-\caption{Four time-series examples. These may represent joint angles over time, intensity changes of a pixel, or integral curves from an optical flow tracking algorithm, for example. \label{example_waveforms}}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png}
+\caption{NHSIC results using the variance estimated from data (left plot) and the median of the values (right plot) to measure the similarity between a signal with a fixed amplitude and another with a varying amplitude. It is difficult to see in the left plot however the maximum value 9at index 39) is correct, as is that for the right plot.  \label{var_med}}
 \end{figure}
+
+There are two main components to any time-series signal: amplitude and frequency. Typically we can represent any signal as a trigonometric polynomial, i.e. in the form
+
+\begin{equation}
+f(x) = \sum_i{\alpha_{1i}\sin(\omega_{1i}x) + \alpha_{2i}\cos(\omega_{2i}x)}
+\end{equation}
+
+\noindent where $\alpha_{ji}$ are the magnitudes of the two components and $\omega_{ji}$ are the frequencies. In our synthetic examples we use only a single sine wave, as these are fully representative of the ability of our algorithm. The results in Fig \ref{amplitude} demonstrate the need for a normalised version of the HSIC. We show that the value of the HSIC grows quadratically with the amplitude of the underlying signals. In contrast, our normalised results demonstrate that two signals are most similar when the amplitudes are identical, with the similarity (HSIC score) decreasing for both increasing and decreasing amplitudes. \\
+
+\begin{figure}[h!]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png}
+\caption{The effect of normalising HSIC to detect the amplitude of a sine wave. The results in the left plot are for the unnormalised HSIC while the results on the right are for the normalised version. Each trace (in both left and right plots) is a single sine wave with varying amplitudes. The amplitude is correctly detected in all instances using the normalised HSIC.  \label{amplitude}}
+\end{figure}
+
+The NHSIC measure can also succesfully determine the correct frequency of a signal. In Fig \ref{freq} we measure both the NHSIC and the HSIC for a sine wave with a varying frequency against a number of test signals. As can be seen both the NHSIC and the HSIC are capable of detecting the correct frequency in all six test cases. It is important to note that in fact the HSIC is identical to the NHSIC when the amplitude is fixed at the corrext value and only the frequency is varied. Fig. \ref{freq} also exhibits a significant amount of clutter for values that are not near the true frequency value. This is due to the fact that the HSIC is capable of detecting harmonic frequencies in the signal. Fig. \ref{freq_single} illustrates this more clearly, as it displays the results of a single test. \\
+
+\begin{figure}[h!]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png}
+\caption{The effect of normalising HSIC to detect the frequency of a sine wave. The results in the left plot are for the unnormalised HSIC while the results on the right are for the normalised version. Each trace (in both left and right plots) is a single sine wave with varying amplitudes. The frequency is correctly detected in all instances using the normalised HSIC.  \label{freq}}
+\end{figure}
+
+\begin{figure}[h!]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png}
+\caption{The effect of normalising HSIC to detect the frequency of a sine wave. The results in the left plot are for the unnormalised HSIC while the results on the right are for the normalised version. The test sine wave is given by $f(x) = \sin(0.6 x)$ \label{freq_single}}
+\end{figure}
+
+%\begin{figure}[h]
+%\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.png}
+% \caption{Four time-series examples. These may represent joint angles over time, intensity changes of a pixel, or integral curves from an optical flow tracking algorithm, for example. \label{example_waveforms}}
+% \end{figure}
+
 
 \section{Temporal Synchronisation}
 
-There are often times when two vides of an activity will not be temporally aligned, for example in film making. In the film industry the term 'shot' is used to denote a short sequence of continuous activity which is not broken by a cut, typically on the order of 1000 frames. It is common for multiple cameras to record each shot, as well as infrared cameras if motion capture technology is being employed. Motion capture systems typically contain their own dedicated hardware temporal synchronisation frameworks, while an additional hardware synchronisation system is employed for the remaining cameras. Hardware synchronisation methods are occasionally used for filming outdoors, however they are often costly and require time to setup for each shoot. Hardware synchronisation methods are therefore inaccessible for amateur cinematographers, and for unplanned, ad hoc recording scenarios. In these situations it is therefore highly likely that the activity recorded from each camera will not be synchronised in time. Furthermore, even if hardware synchronisation has been used, once a shot has been captured it will often be sent to an editorial team, who may perform alterations to the shot which renders the timestamps incorrect. The original and the modified shots will therefore require manual synchronisation to align them again. Manual synchronisation is typically performed by searching for high frequency events such as footfalls, eyeblinks, or when any two items connect. This obviously introduces problems when there is very little scene activity, or when there are no high frequency components. This could occur in tracking shots that produce a sweeping motion, or for shots in which any activity is very smooth, for example a car driving along a street. 
+There are often times when two vides of an activity will not be temporally aligned, for example in film making. In the film industry the term 'shot' is used to denote a short sequence of continuous activity which is not broken by a cut, typically on the order of 1000 frames. It is common for multiple cameras to record each shot, as well as infrared cameras if motion capture technology is being employed. Motion capture systems typically contain their own dedicated hardware temporal synchronisation frameworks, while an additional hardware synchronisation system is employed for the remaining cameras. Hardware synchronisation methods are occasionally used for filming outdoors, however they are often costly and require time to setup for each shoot. Hardware synchronisation methods are therefore inaccessible for amateur cinematographers, and for unplanned, ad hoc recording scenarios. In these situations it is therefore highly likely that the activity recorded from each camera will not be synchronised in time. Furthermore, even if hardware synchronisation has been used, once a shot has been captured it will often be sent to an editorial team, who may perform alterations to the shot which renders the timestamps incorrect. The original and the modified shots will therefore require manual synchronisation to align them again. Manual synchronisation is typically performed by searching for high frequency events such as footfalls, eyeblinks, or when any two items connect. This obviously introduces problems when there is very little scene activity, or when there are no high frequency components. This could occur in tracking shots that produce a sweeping motion, or for shots in which any activity is very smooth, for example a car driving along a street. \\
 
-It is vitally important that multiple views of a shot are aligned in time. In live action films it is critical to know when to be able to switch between views, while in films that contain visual effects elements the multiple views are used as input to motion reconstruction pipelines, stereo reconstruction pipelines, and as raw input for artists manually creating creatures and scenes. 
+It is vitally important that multiple views of a shot are aligned in time. In live action films it is critical to know when to be able to switch between views, while in films that contain visual effects elements the multiple views are used as input to motion reconstruction pipelines, stereo reconstruction pipelines, and as raw input for artists manually creating creatures and scenes. \\
 
-In film making it is often the case that hardware synchronisation methods are used to automatically align video feeds of a scene. 
+In film making it is often the case that hardware synchronisation methods are used to automatically align video feeds of a scene. \\
 
 \section{Activity Clustering}

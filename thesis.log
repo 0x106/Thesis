@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 MAY 2016 20:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 MAY 2016 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,17 +451,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
@@ -473,83 +478,137 @@ File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png Graphic
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-var_med.png used on input line 74.
+var_med.png used on input line 95.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+[27 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png, id=108, 578
+.16pt x 433.62pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png Graphic
+ file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+amp_var.png used on input line 106.
+(pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.png, i
+d=109, 1300.86pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.p
+ng Graphic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.pn
+g>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+fixed_var_no_norm.png used on input line 111.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm.png
+, id=110, 1300.86pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_nor
+m.png Graphic file (type png)
 
- []
-
-
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png, id=104, 5
-78.16pt x 433.62pt>
-File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png Graph
-ic file (type png)
-
-<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png>
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm
+.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-amplitude.png used on input line 87.
-(pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
+floating_var_no_norm.png used on input line 115.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisation.
+png, id=111, 1300.86pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisa
+tion.png Graphic file (type png)
 
- []
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisat
+ion.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+fixed_var_normalisation.png used on input line 119.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
-[27]
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png, id=108, 1300.8
-6pt x 755.2215pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normalisati
+on.png, id=112, 1300.86pt x 755.2215pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normal
+isation.png Graphic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normali
+sation.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+floating_var_normalisation.png used on input line 123.
+(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png, id=113, 578.16
+pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png Graphic fi
 le (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-freq.png used on input line 94.
-(pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png, id=109,
- 578.16pt x 433.62pt>
-File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png Gra
-phic file (type png)
-
-<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png>
-Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-freq_single.png used on input line 99.
+freq.png used on input line 128.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png, id=114, 5
+78.16pt x 433.62pt>
+File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png Graph
+ic file (type png)
+
+<use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png>
+Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+magnitude.png used on input line 133.
+(pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
-[28 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>]
-[29 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+[29 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
-) [30 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png>]
-[31 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png>]
-(./thesis.bbl) [32
+) [30 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.
+png>] [31 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_n
+o_norm.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no
+rmalisation.png>] [32 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fl
+oating_var_normalisation.png>] [33 </home/cshome/j/jcampbell/Desktop/Thesis/The
+sis/images/freq.png>] [34 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/image
+s/magnitude.png>] (./thesis.bbl) [35
 
 
 
@@ -562,10 +621,10 @@ No file appendices.tex.
 (./chapters/poseEstimation.aux) (./chapters/activityRecognition.aux)
 (./appendices.aux)) ) 
 Here is how much of TeX's memory you used:
- 3813 strings out of 493089
- 52487 string characters out of 6134842
- 120000 words of memory out of 5000000
- 7175 multiletter control sequences out of 15000+600000
+ 3837 strings out of 493089
+ 54007 string characters out of 6134842
+ 121047 words of memory out of 5000000
+ 7195 multiletter control sequences out of 15000+600000
  12690 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,6n,26p,2918b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -583,10 +642,10 @@ fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary10.
 pfb>
-Output written on thesis.pdf (32 pages, 962021 bytes).
+Output written on thesis.pdf (35 pages, 1785996 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

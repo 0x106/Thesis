@@ -87,18 +87,18 @@ Before we begin a discussion of further experiments we first introduce our norma
 \text{NHSIC}(X,Y) = \frac{\text{HSIC}(X,Y)}{\sqrt{\text{HSIC}(X,X)\text{HSIC}(Y,Y)}}
 \end{equation}
 
-\noindent and is necessary because, as we will see, we need to vary the choice of (co)-variance for every experiment we undertake. We therefore need to scale the HSIC value in order to be able to compare any two results. \\
+\noindent and is necessary because, as we will see, we need to vary the choice of (co)-variance for any choice of $X$ and $Y$. We therefore need to scale the HSIC value in order to be able to compare any two results. This will be elaborated further below. \\
 
-In previous works a number of authors have used the median of the data values as the variance in the kernel function. We choose instead to estimate the (co)-variance from the data. This produces much more stable results than the median value, which is important if we are using the NHSIC as an energy measure in an optimisation schema. In Fig. \ref{var_med} we show how the choice of variance affects the HSIC between a fixed signal and a signal with a varying amplitude. In the left plot we can see that the NHSIC varies smoothly with changes in the amplitude of the test signal, while in the right plot the NHSIC results contain a significant number of local minima.\\
+In previous works a number of authors have used the median of the data values as the variance in the kernel function. We show instead that it is better to estimate the (co)-variance from the data. This produces much more stable results than the median value, which is important if we are using the NHSIC as an energy measure in an optimisation schema. In Fig. \ref{var_med} we show how the choice of variance affects the HSIC between a fixed signal and a signal with a varying amplitude. In the left plot we can see that the NHSIC varies smoothly with changes in the amplitude of the test signal, while in the right plot the NHSIC results are noisy and contain a significant number of local minima.\\
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png}
 \caption{NHSIC results using the variance estimated from data (left plot) and the median of the values (right plot) to measure the similarity between a signal with a fixed amplitude and another with a varying amplitude. It is difficult to see in the left plot however the maximum value 9at index 39) is correct, as is that for the right plot.  \label{var_med}}
 \end{figure}
 
-One of the consequences of performing computations on sine waves is that the variance of the signal increases quadratically with linear increases in the amplitude. This effect can be seen in Fig. \ref{amp_var} which demonstrates the changes in variance as the amplitude of a sine wave increases. If we were to choose a fixed value for the (co)-variance in the kernel function, then we would effectively be restricting the domain of the kernel function given the variance of the input signal. At first glance this would seem fine, as it is our goal to discover differences in two signals, which will clearly be uncovered if our kernel function treats signals with different variances differently. The problem, however, is that as the magnitude of a sine wave approaches infinity, the HSIC will approach a value of one. This means that a signal with a large amplitude is deemed more similar to a reference signal than the reference signal with itself. If we are given the three functions: $f_1(x) = 0.9\sin(x)$, $f_2(x) = 0.25\sin(x)$, and $f_3(x) = 2.5\sin(x)$, with the goal of asking which of $f_1$, $f_1$, or $f_1$ is most similar to $f_{\text{ref}}(x) = \sin(x)$, then we would be given $f_3$ as an incorrect result. Notably, if the (co)-variance of the kernel function is fixed, then we would have that $\text{HSIC}(f_{\text{ref}}, f_3) > \text{HSIC}(f_{\text{ref}}, f_{\text{ref}})$. Thankfully the solution to this problem is very simple: we require only that the variance of the kernel function be estimated independently for any HSIC computation. As mentioned previously, however, we must also normalise the resulting HSIC value.  \\
+One of the consequences of performing computations on sine waves is that the variance of the signal increases quadratically with linear increases in the amplitude. This effect can be seen in Fig. \ref{amp_var} which demonstrates the changes in variance as the amplitude of a sine wave increases. If we were to choose a fixed value for the (co)-variance in the kernel function, then we would effectively be restricting the domain of the kernel function given the variance of the input signal. At first glance this would seem fine, as it is our goal to discover differences in two signals, which will clearly be uncovered if our kernel function treats signals with different variances differently. The problem, however, is that as the magnitude of a sine wave approaches infinity, the HSIC will approach a value of one. This means that a signal with a large amplitude is deemed more similar to a reference signal than the reference signal with itself. If we are given the three functions: $f_1(x) = 0.9\sin(x)$, $f_2(x) = 0.25\sin(x)$, and $f_3(x) = 2.5\sin(x)$, with the goal of asking which of $f_1$, $f_1$, or $f_1$ is most similar to $f_{\text{ref}}(x) = \sin(x)$, then we would be given $f_3$ as the closest match. Notably, if the (co)-variance of the kernel function is fixed, then we would have that $\text{HSIC}(f_{\text{ref}}, f_3) > \text{HSIC}(f_{\text{ref}}, f_{\text{ref}})$. Thankfully the solution to this problem is very simple: we require only that the variance of the kernel function be estimated independently for any HSIC computation. As mentioned previously, however, this means that we must also normalise the resulting HSIC value.  \\
 
-In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_normalisation}, and \ref{floating_var_normalisation} we show the effect of computing the HSIC between two sine waves, one with varying amplitude and frequency, under a number of different conditions. In all four of these experiments the same test sine wave was used. In Figs. \ref{fixed_var_no_norm} and \ref{floating_var_no_norm} the incorrect result is returned, while in Fig. \ref{fixed_var_normalisation} the correct result is returned, however it is less distinct than the (correct) results in Fig. \ref{floating_var_normalisation}. It is difficult to see in these examples, however the correct frequency is obtained for almost all magnitudes. In Fig. \ref{freq} we can see that the 
+In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_normalisation}, and \ref{floating_var_normalisation} we show the effect of computing the HSIC between two sine waves, one with varying amplitude and frequency, under a number of different conditions. In all four of these experiments the same test sine wave was used. In Figs. \ref{fixed_var_no_norm} and \ref{floating_var_no_norm} the incorrect result is returned, while in Fig. \ref{fixed_var_normalisation} the correct result is returned, however it is less distinct than the (correct) results in Fig. \ref{floating_var_normalisation}. It is difficult to see in these examples, however the correct frequency is obtained for almost all magnitudes. In Fig. \ref{freq} we can see that at the correct magnitude the correct frequency is clearly found by our algorithm. 
 
 
 
@@ -111,14 +111,17 @@ In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_nor
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.png}
 \caption{Variance computed from all possible examples, with no normalisation of the HSIC.\label{fixed_var_no_norm}}
 \end{figure}
+
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm.png}
 \caption{Variance computed independently for every test example, with no normalisation of the HSIC.\label{floating_var_no_norm}}
 \end{figure}
+
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisation.png}
 \caption{Variance computed from all possible examples, with normalisation of the HSIC.\label{fixed_var_normalisation}}
 \end{figure}
+
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normalisation.png}
 \caption{\label{floating_var_normalisation}}
@@ -126,114 +129,13 @@ In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_nor
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png}
-\caption{Variance computed from all possible examples, with normalisation of the HSIC.\label{freq}}
+\caption{\label{freq}}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png}
-\caption{Variance computed from all possible examples, with normalisation of the HSIC.\label{magnitude}}
+\caption{\label{magnitude}}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% We show that in this format the HSIC will increase with increasing amplitude, which means that it will lead to situations where two signals are more similar to each other than either signal with itself. This is clearly undesirable, as we wish for signals to be most similar when they are identical. We therefore make a simple adjustment and introduce a new measure, which we term normalised Hilbert Schmidt independence criterion (NHSIC). We define NHSIC between inputs $X$ and $Y$ as 
-
-% \noindent which has the effect of scaling the HSIC result by the norm of each individual signal. \\
-
-% As was mentioned previously, we are estimating our covariance matrix from the data available, rather than choosing it to be the median value, as is the case in other works. In Fig. \ref{var_med} we can see that this provides much more stable results. In the experiment that generated the results of Fig. \ref{var_med} we measured the NHSIC between a signal with a fixed amplitude and another signal as we varied its amplitude. In both cases the correct results were returned (at index 39) however the NHSIC curve is much smoother when using estimating the variance from the data, rather than using the median. This is extremely important, as we often wish to use optimisation schemes with the NHSIC as an energy measure and optimisation is much easier to perform when the energy surface is smooth and does not contain local optima. Finally, when computing the (co)-variance from data, we are faced with one question: do we estimate the covariance from all the data available, or only from the data being used in the current computation? In these experiments we are specifying a sine wave with a fixed frequency and amplitude to be our reference, and then iterating over both the frequency and amplitude of a test signal to find the global maxima. We could either specify all the signals we will search through ahead of time, and compute the variance from all of them, or we could re-compute the variance from only each individual test. This problem will appear in our experiments on real data, where we are interested in finding the similarity between two videos of human motion. In order to compute the HSIC in these experiments we need to compute the covariances of the various joints, however it is not clear whether we should
-
-
-% Furthermore, using the normalised HSIC means that it is desirable but not necessary to estimate the covariance matrix from all the data, rather than as and when data becomes available. This may seem like a trivial statement to assert, however there are cases where the data is not available before computation begins. We may, for instance, wish to find the similarity between two videos, then some time later compare a third video. \\
-
-% There are two main components to any time-series signal: amplitude and frequency. Typically we can represent any signal as a trigonometric polynomial, i.e. in the form
-
-% \begin{equation}
-% f(x) = \sum_i{\alpha_{1i}\sin(\omega_{1i}x) + \alpha_{2i}\cos(\omega_{2i}x)}
-% \end{equation}
-
-% \noindent where $\alpha_{ji}$ are the magnitudes of the two components and $\omega_{ji}$ are the frequencies. In our synthetic examples we use only a single sine wave, as these are fully representative of the ability of our algorithm. The results in Fig \ref{amplitude} demonstrate the need for a normalised version of the HSIC. We show that the value of the HSIC grows quadratically with the amplitude of the underlying signals. In contrast, our normalised results demonstrate that two signals are most similar when the amplitudes are identical, with the similarity (HSIC score) decreasing for both increasing and decreasing amplitudes. \\
-
-% \begin{figure}[h!]
-% \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amplitude.png}
-% \caption{The effect of normalising HSIC to detect the amplitude of a sine wave. The results in the left plot are for the unnormalised HSIC while the results on the right are for the normalised version. Each trace (in both left and right plots) is a single sine wave with varying amplitudes. The amplitude is correctly detected in all instances using the normalised HSIC.  \label{amplitude}}
-% \end{figure}
-
-% The NHSIC measure can also succesfully determine the correct frequency of a signal. In Fig \ref{freq} we measure both the NHSIC and the HSIC for a sine wave with a varying frequency against a number of test signals. As can be seen both the NHSIC and the HSIC are capable of detecting the correct frequency in all six test cases. It is important to note that in fact the HSIC is identical to the NHSIC when the amplitude is fixed at the corrext value and only the frequency is varied. Fig. \ref{freq} also exhibits a significant amount of clutter for values that are not near the true frequency value. This is due to the fact that the HSIC is capable of detecting harmonic frequencies in the signal. Fig. \ref{freq_single} illustrates this more clearly, as it displays the results of a single test. \\
-
-% \begin{figure}[h!]
-% \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png}
-% \caption{The effect of normalising HSIC to detect the frequency of a sine wave. The results in the left plot are for the unnormalised HSIC while the results on the right are for the normalised version. Each trace (in both left and right plots) is a single sine wave with varying amplitudes. The frequency is correctly detected in all instances using the normalised HSIC.  \label{freq}}
-% \end{figure}
-
-% \begin{figure}[h!]
-% \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq_single.png}
-% \caption{The effect of normalising HSIC to detect the frequency of a sine wave. The results in the left plot are for the unnormalised HSIC while the results on the right are for the normalised version. The test sine wave is given by $f(x) = \sin(0.6 x)$ \label{freq_single}}
-% \end{figure}
-
-% %\begin{figure}[h]
-% %\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/example_waveforms.png}
-% % \caption{Four time-series examples. These may represent joint angles over time, intensity changes of a pixel, or integral curves from an optical flow tracking algorithm, for example. \label{example_waveforms}}
-% \end{figure}
-
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Temporal Synchronisation}
@@ -241,7 +143,5 @@ In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_nor
 There are often times when two vides of an activity will not be temporally aligned, for example in film making. In the film industry the term 'shot' is used to denote a short sequence of continuous activity which is not broken by a cut, typically on the order of 1000 frames. It is common for multiple cameras to record each shot, as well as infrared cameras if motion capture technology is being employed. Motion capture systems typically contain their own dedicated hardware temporal synchronisation frameworks, while an additional hardware synchronisation system is employed for the remaining cameras. Hardware synchronisation methods are occasionally used for filming outdoors, however they are often costly and require time to setup for each shoot. Hardware synchronisation methods are therefore inaccessible for amateur cinematographers, and for unplanned, ad hoc recording scenarios. In these situations it is therefore highly likely that the activity recorded from each camera will not be synchronised in time. Furthermore, even if hardware synchronisation has been used, once a shot has been captured it will often be sent to an editorial team, who may perform alterations to the shot which renders the timestamps incorrect. The original and the modified shots will therefore require manual synchronisation to align them again. Manual synchronisation is typically performed by searching for high frequency events such as footfalls, eyeblinks, or when any two items connect. This obviously introduces problems when there is very little scene activity, or when there are no high frequency components. This could occur in tracking shots that produce a sweeping motion, or for shots in which any activity is very smooth, for example a car driving along a street. \\
 
 It is vitally important that multiple views of a shot are aligned in time. In live action films it is critical to know when to be able to switch between views, while in films that contain visual effects elements the multiple views are used as input to motion reconstruction pipelines, stereo reconstruction pipelines, and as raw input for artists manually creating creatures and scenes. \\
-
-In film making it is often the case that hardware synchronisation methods are used to automatically align video feeds of a scene. \\
 
 \section{Activity Clustering}

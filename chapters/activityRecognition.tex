@@ -4,12 +4,13 @@
 
 \section{Introduction}
 
-In this section we turn to the problem of recognising and clustering various activities across a range of conditions. We describe an activity as a short sequence of motion, typically undertaken by a person, and captured by either video cameras or a motion capture system. Activity recognition is an important field of study, due to the growing demand for systems that can reliably infer behaviour in a range of settings. There are a wide variety of applications for activity recognition systems. For example in home care scenarios, where robots may be employed to care for the elderly or for the disabled. In home care, the primary consideration is monitoring the status of the patient, to infer, for example, whether they are injured or safe, whether they are cooking or excersing, and most importantly, whether their behaviour appears to be normal.\\
+In this section we turn to the problem of recognising and clustering various activities across a range of conditions. An activity is a short sequence of motion, typically undertaken by a person, and captured by either video cameras or a motion capture system. Activity recognition is an important field of study, due to the growing demand for systems that can reliably infer behaviour in a range of settings. There are a wide variety of applications for activity recognition systems, for example home based care, gaming, surveillance, and for safety on construction sites, among many more. In home care scenarios, where robots may be employed to care for the elderly or for the disabled, the primary consideration is monitoring the status of the patient to determine whether they are healthy and safe. It may also be necessary for the activity recognition system to determine the current state of the patient so as to control the home. Patients may have dementia or limited mobility and therefore it may be necessary to be able to discriminate between low amplitude and ambiguous motions. We may also wish to employ activity recognition systems at construction sites. On large construction sites there will be a large number of hazards, for example machinery operating, uncovered holes dug in the ground, and materials swinging through the air as it is transported. This clearly presents significant danger to people as they move about construction sites. It is desirable, therefore, to employ systems that are capable of inferring the trajectory and likely behaviour of people and machinery as they move around. Systems that can identify when someone is walking and discern some information from their gait may also be useful in biometric applications, for instance in security systems, or for use with autonomous vehicles to identify the behaviour of pedestrians. \\
 
-In a similar fashion to previous sections, activity recognition may be used for gaming applications, for example to recognise particular movements that correspond to game commands or to infer the state of the user from their motion. \\
+A number of reviews have explored the space of activity recognition systems. (Vrigkas et al., 2015) develop a taxonomy of human activity recognition schemes. Their research highlights that there are two dominant schemas in the activity recognition literature: unimodal and multi-modal. Unimodal schemas use only one sensory modality, such as an image stream, motion capture data, or an audio stream. Unimodal schemas are exemplified by their focus on \textit{low-level} features, such as space-time events and shape features. Multi-modal schemas, by contrast, are much more \textit{high-level}. They rely on behavioural features, often built from unimodal low-level features. Similarly, multi-modal schemas can employ networks of activity, such as in crowds, to recognise behaviour. We will be focusing almost exclusively on unimodal methods, however for a discussion of multi-modal techniques please refer to (Vrigkas et al., 2015). \\
 
-We may also wish to employ activity recognition systems at construction sites. In large workplaces there will be a large number of hazards, for example machinery operating, uncovered holes dug in the ground, and materials swinging through the air as it is transported. This clearly presents significant danger to people as they move about construction sites. It is desirable, therefore, to employ systems that are capable of inferring the trajectory and likely behaviour of people and machinery as they move around. Systems that can identify when someone is walking and discern some information from their gait may also be useful in biometric applications, for instance in security systems, or for use with autonomous vehicles to identify the behaviour of pedestrians.\\
+Perhaps two of the most dominant unimodal activity recognition paradigms are (i) based on the extraction of space-time features and (ii) on the extraction of shape and appearance features. \textit{appearance-based} methods typically extract the silhouette of a moving person before performing further analysis. (bobickdavis2001) formulate a view-specific action recognition method that is invariant to changes in scale and translation of the underlying activity. Their method consists of an initial training phase from which statistical moments are computed from a series of image derivatives. Specifically (bobickdavis2001) compute a motion energy image (MEI) and a motion history image (MHI), which collectively define where and how a motion occurred, respectively. Recognition of a query image given the training data is performed by computing the Mahalanobis distance between the statistical moments of the query MEI/MHI pair and those computed during training. (huangxu2007) attempt to introduce viewpoint invariance by using orthogonal cameras. They align silhouettes extracted from each camera along the medial axis and then extract a set of features. A hidden Markov model is used for training and recognition of the extracted features. This is an extension of the approach by (weinland et al 2006) who use a series of calibrated cameras to extract motion history volumes from the silhouette of an actor as they perform an activity. A Fourier transform is used to learn and compare various activities. While this technique is viewpoint invariant it relies on multiple calibrated cameras, which limits its applicability. A similar approach is taken by (Chakraboty et al 2008) who combine a whole body person detector with a parts based detector that they use as input to a classification algorithm. Furthermore, (Chakraboty et al 2008) use multiple sub-classifiers taken from multiple viewpoints for each body part. A collection of hidden Markov models are trained to identify actions based on the pose of body parts detected in query videos. The use of human silhouettes as the input stage to a recognition algorithm has existed for many years. In 1994 (guo et al 1994) developed a two stage process that first fit a stick-figure model to the silhouette in every frame and then used a neural network to recognise actions based on the changes to the stick-figure parameters over time. Similarly, (niyogianderson1994) extract edges from the spatio-temporal volume of a walking person, from which they extracted bounding contours. A nearest neighbour approach was used to measure the distance between spatio-temporal contours from various subjects in order to assess similarity. This algorithm is not view invariant as they required that the subjects moved parallel to the image plane. A multi-view appearance based technique was introduced by (qhu et al 2013) which uses random forests (breiman2001) to map silhouettes to activity classes.\\
 
+In contrast to the methods introduced above, \textit{space-time} methods predominantly rely on optical flow information. (Vrigkas et al 2013) extract motion trajectory curves from optical flow data which they match using a variety of schemes. Their method is powerful as it can handle sequences performed at varying speeds, as opposed to many methods which presume relatively consistent actions. As is common with almost all the frameworks mentioned in this thesis, (vrigkas2013) require that a model is learnt to discriminate between various activity classes. During learning they use Gaussian mixture models to cluster various motion curves into distinct classes. They then compare and contrast various schemes for matching the clustered motion curves, including: \textit{longest common subsequence} and \textit{canonical time warping}. Time warping algorithms, commonly known as dynamic time warping (DTW) are popular for matching time series data, as they permit sub-frame comparisons between sequences. (Zhous and de la torre 2009) developed the \textit{canonical} version, which allows for matching between two signals of different dimensionality. 
 
 \section{Motion Capture Data}
 
@@ -48,32 +49,11 @@ It is often the case where the dimensionality of our samples is much greater tha
 
 Since the number of samples is low we can efficiently compute the alternative covariance matrix $X^{T} X$ which is of size $n\:\:\text{x}\:\:n$. We then compute the eigenvalues and eigenvectors of this covariance matrix. The matrix $V$ is formed by stacking the eigenvectors in columns according to the size of the corresponding eigenvalues and can then be used as in Eq. \ref{PCA_compute}.\\
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Synthetic Function Matching with HSIC}
 
 The principle contribution of this section is to demonstrate that our HSIC based measure provides a robust measure of the similarity between two arbitrary time-series signals. We demonstrate this capability with a series of examples on synthetic data. As a further proof of concept we also demonstrate that our measure could be used to re-construct a signal from data, in cases where Fourier based methods are not suitable. \\
 
-We saw in Figs \ref{getting_up} and \ref{walks} that our input is a multi-dimensional time-series signal. The top rows of each of these figures are raw input data, while the bottom rows are the PCA transformed data. In each plot we have traced a single parameter from each of two motions. Our input is given by the variables $X = \{x_0, x_1, ..., x_n\}$ and $Y = \{y_0, y_1, ..., y_n\}$, where each of the $n$ samples $x_i$ and $y_i$ are vectors of length $m$. Each element of $x_i$ and $y_i$ gives the value of a single parameter at a single point in time. As usual we have that $\text{HSIC}(X, Y) = \frac{1}{n^2}\textbf{KHLH}$ where $\textbf{H}$ is a centering matrix and $\textbf{K}$ and $\textbf{L}$ are Gram matrices defined on $X$ an $Y$ respectively. As before, our kernel matrix is defined as
+We saw in Figs \ref{getting_up} and \ref{walks} that our input is a multi-dimensional time-series signal. The top rows of each of these figures are raw input data, while the bottom rows are the PCA transformed data. In each plot we have traced a single parameter from each of two motions. Our input is given by the variables $X = \{x_0, x_1, ..., x_n\}$ and $Y = \{y_0, y_1, ..., y_n\}$, where each of the $n$ samples $x_i$ and $y_i$ are vectors of length $m$. Each element $x_{ik}$ and $y_{ik}$ of $x_i$ and $y_i$ gives the value of a single parameter at a single point in time. It may be, for example, that $x_i$ and $y_i$ are pixel intensities, spatial coordinates of a point on a moving target, or joint angles from motion capture data. As usual we have that $\text{HSIC}(X, Y) = \frac{1}{n^2}\text{tr}\textbf{(KHLH)}$ where $\textbf{H}$ is a centering matrix and $\textbf{K}$ and $\textbf{L}$ are Gram matrices defined on $X$ an $Y$ respectively. As before, our kernel matrix is defined as
 
 \begin{equation}
 \textbf{K}_{i,j} = k(x_i,y_j) = \exp^{-((x_i-y_j)\Sigma(x_i-y_j)^T)}
@@ -104,17 +84,17 @@ In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_nor
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png}
-\caption{Variance of a sine wave as the magnitude is linearly increased.\label{amp_var}}
+\caption{Variance of a sine wave as the amplitude is linearly increased.\label{amp_var}}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.png}
-\caption{Variance computed from all possible examples, with no normalisation of the HSIC.\label{fixed_var_no_norm}}
+\caption{Variance computed from all possible examples, with no normalisation of the HSIC. Note that the peak is pronounced, however it incorrectly identifies the magnitude. \label{fixed_var_no_norm}}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm.png}
-\caption{Variance computed independently for every test example, with no normalisation of the HSIC.\label{floating_var_no_norm}}
+\caption{Variance computed independently for every test example, with no normalisation of the HSIC. The peak is\label{floating_var_no_norm}}
 \end{figure}
 
 \begin{figure}[h]
@@ -138,10 +118,181 @@ In Figs. \ref{fixed_var_no_norm}, \ref{floating_var_no_norm}, \ref{fixed_var_nor
 \end{figure}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Action Recognition}
+
+We turn now to the principle contribution of this chapter: to demonstrate that the Hilbert-Schmidt independence criterion can be used to match sequences of activities from motion capture data. As before we use the normalised HSIC, and estimate the covariance of the data for every pair of activities we wish to match. \\%One of the limitations of our method is that for any two action sequences we compare, we require that they are of equal length. We cannot match, for instance, a four second video of a person walking with an eight second video of a person walking.  This is less of a problem in cases where we are searching for instances of a reference action in a longer sequence, however we must account for the length of the input when matching two sequences in their entirety. This will be further discussed in section something.\\
+
+In our first experiments we are given a short reference sequence of a walking motion, along with a longer video that contains various examples of both walking and climbing behaviour. The PCA transformed reference input is $X = \{x_0, x_1, ..., x_N\}$ where each $x_i$ is a $Q$ dimensional vector containing the $Q$ most significant components. We choose the number of PCA components, $Q$, for each experiment according to 
+
+\begin{equation}
+z = \frac{\sum_k^Q{\sqrt{e_k}}}{\sum_i^N{\sqrt{e_i}}} > 0.95
+\end{equation}
+
+\noindent where $e_i$ is the i\textit{th} eigenvalue of the principle components and $N$ is the number of samples. This allows us to choose the smallest number of principle components that explain more than $95\%$ of the variance of the data.\\
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png}
+\caption{Plot of the square root of the eigenvalues of the data covariance matrix, in decreasing order. Only the first 30 values are shown for display purposes. \label{eigenvalues}}
+\end{figure}
+
+Our initial reference video is number 34 from subject 105 (herein referred to as 105/34) of the CMU Mocap database. Our test video is number two from subject one (herein referred to as 01/02) of the same database. In this experiment $Q$ is set to 29, as this is the larger of the $Q$ values for the two sequences. From 105/34 we selected a six second walking sequence as the reference motion, which corresponds to 720 mocap data samples. We use a number of reference sequences offset slightly from the starting point to reduce the sensitivity of our algorithm to changes in phase. Selected frames from the animated reference and test sequences are shown in Figs. \ref{105_34} and \ref{01_02} respectively. The frames in Fig. \ref{105_34} are indicative of all the subsequences used. The frames in Fig \ref{01_02} are from the closest matching subsequence from 01/02, i.e the subsequence that most resembles walking motion, according to our algorithm. Fig. \ref{ts_05} shows the results of running the NHSIC algorithm for a variety of offsets of the test sequence. Each sequence contains $M = 720$ data samples, however this is downsampled to $N = 200$ samples as the time complexity of the NHSIC algorithm has time complexity $O(N^2)$. There are two peaks in the results in Fig. \ref{ts_05}: at frame 45 and frame 104. The first peak correctly indicates the point in the sequence when the subject is walking, while the second peak refers to a subsequence for which the subject is climbing a set of stairs. These results are interesting as one would not typically not label a stair climbing sequence as walking, which raises an interesting problem with our algorithm: we currently have neither an objective measure of success, nor do we have any means of selecting against negative examples. These two problems are discussed after the presentation of the results. These results do, however, clearly demonstrates the strength of the Hilbert-Schmidt independence criterion to match sequences which share common underlying characteristics.% To further demonstrate the strength of the NHSIC, Fig. \ref{ts_09_expanded} shows an expanded section of results from Fig. \ref{ts_09}, which highlights the twin peaks at frames 105 and 108, with a much lower result at frame 107, between them. This drop corresponds to a subsequence where the subject climbs the stairs, waits, and then climbs back down. The peaks on either side of this drop refer to subsequences where the subject is predominantly climbing either up or down the stairs. \\
+
+We further tested our algorithm with the same reference sequence (105/34) but with a different test sequence: video 15 from subject 86 (86/15) of the CMU mocap database. In this video the subject walks in a small circle for a short period of time, sits down, waves their arms, makes a number of miscellaneous actions, then stands and walks in a small circle again. The results of running our algorithm under the same conditions as the previous experiment are shown in Fig. \ref{ts_08}, where we can clearly see the strong match at the start of the sequence (frames 0 - 22), and at the end of the sequence (frame 210). These results also show a weaker match at frames 93 - 103. This weaker match occurs when the subject is sitting and makes a brushing motion with their arm. Since this motion is isolated (does not appear in conjunction with other motions) it is being labelled as similar to the reference walking motion. This highlights the issue with the NHSIC for identifying false positives and is discussed further in the future work section. \\
+
+Our final experiment of this section was on sequence eight from subject 86 (86/08) of the CMU mocap database. This subject initially walks, then performs a series of squats, twists, cyclical arm motions, and kicks. The subject then runs for a short period of time before performing punching actions and then walking again. Our algorithm identified approximately four motions that closely resembled walking. Two of these are indeed walking motions, however it also identifies the running period and kicking period as walking. The walking periods were the two closest matches, followed by the running period and then the kicking action. 
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/130.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/155.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/180.png}
+\end{subfigure}
+
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/205.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/230.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/255.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/285.png}
+\end{subfigure}
+\caption{ Selected frames from the reference sequence of 105/34.   \label{105_34}}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/335.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/410.png}
+\end{subfigure}
+
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/435.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/460.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/485.png}
+\end{subfigure}
+\begin{subfigure}{0.24\textwidth}
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/500.png}
+\end{subfigure}
+\caption{Selected frames from the subsequence of 01/02 that matches the reference sequence in 105/34.\label{01_02}}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09.png}
+\caption{Activity recognition results for 01/02. Note the strong peak at frame 45 (walking) and the broader peak at frames 104 - 112 (climbing stairs).\label{ts_09}}
+\end{figure}
+
+%\begin{figure}[h]
+%\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09_expanded.png}
+%\caption{Expanded results from Fig. \ref{ts_09} for frames 85 - 120. The subject begins climbing the stairs at frame 104, reaches the top at frame  \label{ts_09_expanded}}
+%\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.png}
+\caption{\label{ts_08}}
+\end{figure}
+
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png}
+\caption{\label{ts_10}}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png}
+\caption{\label{ts_11}}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Temporal Synchronisation}
 
-There are often times when two vides of an activity will not be temporally aligned, for example in film making. In the film industry the term 'shot' is used to denote a short sequence of continuous activity which is not broken by a cut, typically on the order of 1000 frames. It is common for multiple cameras to record each shot, as well as infrared cameras if motion capture technology is being employed. Motion capture systems typically contain their own dedicated hardware temporal synchronisation frameworks, while an additional hardware synchronisation system is employed for the remaining cameras. Hardware synchronisation methods are occasionally used for filming outdoors, however they are often costly and require time to setup for each shoot. Hardware synchronisation methods are therefore inaccessible for amateur cinematographers, and for unplanned, ad hoc recording scenarios. In these situations it is therefore highly likely that the activity recorded from each camera will not be synchronised in time. Furthermore, even if hardware synchronisation has been used, once a shot has been captured it will often be sent to an editorial team, who may perform alterations to the shot which renders the timestamps incorrect. The original and the modified shots will therefore require manual synchronisation to align them again. Manual synchronisation is typically performed by searching for high frequency events such as footfalls, eyeblinks, or when any two items connect. This obviously introduces problems when there is very little scene activity, or when there are no high frequency components. This could occur in tracking shots that produce a sweeping motion, or for shots in which any activity is very smooth, for example a car driving along a street. \\
+There are often times when two vides of an activity will not be temporally aligned, for example in film making. In the film industry the term \textit{shot} is used to denote a short sequence of continuous activity which is not broken by a cut, typically on the order of 1000 frames. It is common for multiple cameras to record each shot, as well as infrared cameras if motion capture technology is being employed. Motion capture systems typically contain their own dedicated hardware temporal synchronisation frameworks, while an additional hardware synchronisation system is employed for the remaining cameras. Hardware synchronisation methods are occasionally used for filming outdoors, however they are often costly and require time to setup for each shoot. Hardware synchronisation methods are therefore inaccessible for amateur cinematographers, and for unplanned, ad hoc recording scenarios. In these situations it is therefore highly likely that the activity recorded from each camera will not be synchronised in time. Furthermore, even if hardware synchronisation has been used, once a shot has been captured it will often be sent to an editorial team, who may perform alterations to the shot which renders the timestamps incorrect. The original and the modified shots will therefore require manual synchronisation to align them again. Manual synchronisation is typically performed by searching for high frequency events such as footfalls, eyeblinks, or when any two items connect. This obviously introduces problems when there is very little scene activity, or when there are no high frequency components. This could occur in tracking shots that produce a sweeping motion, or for shots in which any activity is very smooth, for example a car driving along a street. \\
 
 It is vitally important that multiple views of a shot are aligned in time. In live action films it is critical to know when to be able to switch between views, while in films that contain visual effects elements the multiple views are used as input to motion reconstruction pipelines, stereo reconstruction pipelines, and as raw input for artists manually creating creatures and scenes. \\
 
+\subsection{Matching mocap with Iimage data}
+
+One of the strengths of the HSIC is it can theoretically find all the functional dependencies between two random variables. Critically, this means that we can use the HSIC to match data from disparate sensing modalities, i.e. between mocap data and image data. In some film production settings it may be necessary to find the temporal offset between the motion capture data of a scene, and some video of that scene. We therefore tested our algorithm under these settings, and show that it is possible to synchronise 
+
 \section{Activity Clustering}
+
+\subsection{}

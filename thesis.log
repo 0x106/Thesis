@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 JUN 2016 13:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 JUN 2016 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,103 +426,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-[24]
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png, id=90, 1
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png, id=94, 1
 300.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-getting_up.png used on input line 21.
+getting_up.png used on input line 49.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png, id=92, 1300.8
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png, id=96, 1300.8
 6pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png Graphic f
 ile (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-walks.png used on input line 26.
+walks.png used on input line 54.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-[26 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+[27 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/getting_up.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+[28 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/walks.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png, id=106, 130
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+[29]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png, id=112, 130
 0.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png Graphic
  file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-var_med.png used on input line 74.
+var_med.png used on input line 102.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-[28]
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png, id=110, 578
+[30 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png, id=117, 578
 .16pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png Graphic
  file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-amp_var.png used on input line 85.
+amp_var.png used on input line 113.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
@@ -530,14 +540,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.png, i
-d=111, 1300.86pt x 755.2215pt>
+d=118, 1300.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.p
 ng Graphic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.pn
 g>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-fixed_var_no_norm.png used on input line 90.
+fixed_var_no_norm.png used on input line 118.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
@@ -545,14 +555,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm.png
-, id=112, 1300.86pt x 755.2215pt>
+, id=119, 1300.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_nor
 m.png Graphic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm
 .png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-floating_var_no_norm.png used on input line 95.
+floating_var_no_norm.png used on input line 123.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
@@ -560,14 +570,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisation.
-png, id=113, 1300.86pt x 755.2215pt>
+png, id=120, 1300.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisa
 tion.png Graphic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisat
 ion.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-fixed_var_normalisation.png used on input line 100.
+fixed_var_normalisation.png used on input line 128.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
@@ -575,333 +585,334 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normalisati
-on.png, id=114, 1300.86pt x 755.2215pt>
+on.png, id=121, 1300.86pt x 755.2215pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normal
 isation.png Graphic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normali
 sation.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-floating_var_normalisation.png used on input line 105.
+floating_var_normalisation.png used on input line 133.
 (pdftex.def)             Requested size: 441.01772pt x 256.0344pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png, id=115, 578.16
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png, id=122, 578.16
 pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png Graphic fi
 le (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-freq.png used on input line 110.
+freq.png used on input line 138.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png, id=116, 5
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png, id=123, 5
 78.16pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-magnitude.png used on input line 115.
+magnitude.png used on input line 143.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-[29 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/var_med.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[30 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png>]
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png, id=125,
+
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png, id=128,
  578.16pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png Gra
 phic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-eigenvalues.png used on input line 162.
+eigenvalues.png used on input line 190.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `ts_05' on page 31 undefined on input line 166.
+LaTeX Warning: Reference `ts_05' on page 32 undefined on input line 194.
 
 
-LaTeX Warning: Reference `ts_05' on page 31 undefined on input line 166.
+LaTeX Warning: Reference `ts_05' on page 32 undefined on input line 194.
 
-[31 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.pn
-g>]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+[32 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/amp_var.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-[32 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_norm
-.png>]
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png, id=135, 
+[33 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_no_norm.pn
+g>] [34 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_no_
+norm.png>]
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png, id=141, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/105.png used on input line 175.
+105_34/105.png used on input line 203.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/130.png, id=136, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/130.png, id=142, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/130.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/130.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/130.png used on input line 178.
+105_34/130.png used on input line 206.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/155.png, id=137, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/155.png, id=143, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/155.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/155.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/155.png used on input line 181.
+105_34/155.png used on input line 209.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/180.png, id=138, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/180.png, id=144, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/180.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/180.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/180.png used on input line 184.
+105_34/180.png used on input line 212.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/205.png, id=139, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/205.png, id=145, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/205.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/205.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/205.png used on input line 188.
+105_34/205.png used on input line 216.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/230.png, id=140, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/230.png, id=146, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/230.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/230.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/230.png used on input line 191.
+105_34/230.png used on input line 219.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/255.png, id=141, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/255.png, id=147, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/255.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/255.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/255.png used on input line 194.
+105_34/255.png used on input line 222.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/285.png, id=142, 
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/285.png, id=148, 
 321.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/285.png Grap
 hic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/285.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/285.png used on input line 197.
+105_34/285.png used on input line 225.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/335.png, id=143, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/335.png, id=149, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/335.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/335.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/335.png used on input line 205.
+01_02/335.png used on input line 233.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png, id=144, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png, id=150, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/360.png used on input line 208.
+01_02/360.png used on input line 236.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png, id=145, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png, id=151, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/385.png used on input line 211.
+01_02/385.png used on input line 239.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/410.png, id=146, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/410.png, id=152, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/410.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/410.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/410.png used on input line 214.
+01_02/410.png used on input line 242.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/435.png, id=147, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/435.png, id=153, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/435.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/435.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/435.png used on input line 218.
+01_02/435.png used on input line 246.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/460.png, id=148, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/460.png, id=154, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/460.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/460.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/460.png used on input line 221.
+01_02/460.png used on input line 249.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/485.png, id=149, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/485.png, id=155, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/485.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/485.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/485.png used on input line 224.
+01_02/485.png used on input line 252.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/500.png, id=150, 3
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/500.png, id=156, 3
 21.2pt x 240.9pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/500.png Graph
 ic file (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/500.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-01_02/500.png used on input line 227.
+01_02/500.png used on input line 255.
 (pdftex.def)             Requested size: 105.84666pt x 79.38329pt.
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09.png, id=151, 578.1
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09.png, id=157, 578.1
 6pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09.png Graphic f
 ile (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-ts_09.png used on input line 233.
+ts_09.png used on input line 261.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.png, id=152, 578.1
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.png, id=158, 578.1
 6pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.png Graphic f
 ile (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-ts_08.png used on input line 243.
+ts_08.png used on input line 271.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png, id=153, 578.1
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png, id=159, 578.1
 6pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png Graphic f
 ile (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-ts_10.png used on input line 249.
+ts_10.png used on input line 277.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png, id=154, 578.1
+</home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png, id=160, 578.1
 6pt x 433.62pt>
 File: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png Graphic f
 ile (type png)
 
 <use /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png>
 Package pdftex.def Info: /home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-ts_11.png used on input line 254.
+ts_11.png used on input line 282.
 (pdftex.def)             Requested size: 441.01772pt x 330.75882pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 
  []
 
-[33 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisat
-ion.png>] [34 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_v
-ar_normalisation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+[35 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/fixed_var_normalisat
+ion.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
-[35 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.png>]) [36 </ho
-me/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png>] [37 </home/c
-shome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png> </home/cshome/j
-/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png> </home/cshome/j/jcampbe
-ll/Desktop/Thesis/Thesis/images/105_34/130.png> </home/cshome/j/jcampbell/Deskt
-op/Thesis/Thesis/images/105_34/155.png> </home/cshome/j/jcampbell/Desktop/Thesi
-s/Thesis/images/105_34/180.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis
-/images/105_34/205.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
-105_34/230.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/2
-55.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/285.png>]
-[38 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/335.png> </hom
-e/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png> </home/cshome/
-j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png> </home/cshome/j/jcampbe
-ll/Desktop/Thesis/Thesis/images/01_02/410.png> </home/cshome/j/jcampbell/Deskto
-p/Thesis/Thesis/images/01_02/435.png> </home/cshome/j/jcampbell/Desktop/Thesis/
-Thesis/images/01_02/460.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/im
-ages/01_02/485.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_0
-2/500.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_09.png>]
-[39 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.png>] [40 </ho
-me/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png>] [41 </home/cshom
-e/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png>] (./thesis.bbl) [42
+[36 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/floating_var_normali
+sation.png>]) [37 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/freq.p
+ng>] [38 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/magnitude.png>]
+[39 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/eigenvalues.png> </h
+ome/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/105.png> </home/csho
+me/j/jcampbell/Desktop/Thesis/Thesis/images/105_34/130.png> </home/cshome/j/jca
+mpbell/Desktop/Thesis/Thesis/images/105_34/155.png> </home/cshome/j/jcampbell/D
+esktop/Thesis/Thesis/images/105_34/180.png> </home/cshome/j/jcampbell/Desktop/T
+hesis/Thesis/images/105_34/205.png> </home/cshome/j/jcampbell/Desktop/Thesis/Th
+esis/images/105_34/230.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/ima
+ges/105_34/255.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/105_
+34/285.png>] [40 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/3
+35.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/360.png> <
+/home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/385.png> </home/csh
+ome/j/jcampbell/Desktop/Thesis/Thesis/images/01_02/410.png> </home/cshome/j/jca
+mpbell/Desktop/Thesis/Thesis/images/01_02/435.png> </home/cshome/j/jcampbell/De
+sktop/Thesis/Thesis/images/01_02/460.png> </home/cshome/j/jcampbell/Desktop/The
+sis/Thesis/images/01_02/485.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesi
+s/images/01_02/500.png> </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/
+ts_09.png>] [41 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_08.pn
+g>] [42 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_10.png>]
+[43 </home/cshome/j/jcampbell/Desktop/Thesis/Thesis/images/ts_11.png>]
+(./thesis.bbl) [44
 
 
 
@@ -924,7 +935,7 @@ Here is how much of TeX's memory you used:
  8363 multiletter control sequences out of 15000+600000
  12690 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,39p,2979b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,39p,4000b,375s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -938,10 +949,10 @@ xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on thesis.pdf (42 pages, 2081335 bytes).
+Output written on thesis.pdf (44 pages, 2085472 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

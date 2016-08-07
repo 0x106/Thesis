@@ -1,0 +1,54 @@
+%pose estimation
+\chapter{Statistical Measures of Dependence}
+\label{hsic}
+
+In this chapter we describe the mathematical foundations on which the Hilbert-Schmidt independence criterion is prescribed. For a further comprehensive review the reader may be interested in (Muandet et al 2016). 
+
+\section{Functional Analysis}
+
+We begin our discusion by exploring the necessary components for describing Hilbert spaces, and, by extension, reproducing kernel Hilbert spaces. In order to describe Hilbert spaces we will see that we need to have an intuitive understanding of a function space and a norm on that space. This will then allow us to describe how we can embed probability distributions in reproducing kernel Hilbert spaces and subsequently compute the statistical dependence between various distributions.\\
+
+As children, one of the most important ideas we are taught is that numbers have a magnitude. We know that two is less than four, while $380$ is greater than $-19$. Similarly, we are taught that the distance between two numbers can be computed by subtracting one from the other, which allows us to determine the degree to which two numbers differ from each other. As we grow older we are taught that we can construct vectors from these same numbers and apply the same concepts of magnitude and distance. Two vectors $x_1 = (2, 4)$ and $x_2 = (8, 6)$ have magnitudes $|x_1| = \sqrt{5}$ and $|x_2| = \sqrt{100}$ respectively, while the distance between them is given by the magnitude of the vector $z = (-6, -2)$, i.e $|z| = \sqrt{40}$. In both these examples we use the term \textit{norm} to describe the quantity that relates an object, such as a vector or a scalar, to its size. \\
+
+In these examples we are dealing with real numbers in Euclidean space, i.e. $\textbf{x} \in \mathbb{R}$. However it turns out that one can (non-trivially) extend these concepts to deal with \textit{functions} in a \textit{function space}. We will describe here only those classes $X$ of functions $f \in X$ that include a norm (i.e. \textit{normed function spaces}). The norm is itself a function that assigns a non-negative number $||f||_X$ to every function $f \in X$. Importantly, any norm associated with a function space describes elements of the space in a particular manner.  
+
+\section{Kernel Embeddings}
+
+% Many algorithms, such as ~~, choose instead to use a nonlinear function, $\phi$,  which maps points in $X$ to a high-dimensional feature space $F$, i.e. via:
+
+% \begin{equation}
+% \phi \colon X \rightarrow F \\
+% \end{equation} 
+
+% \noindent which implies that $x \rightarrow \phi(x)$, where $F$ is a possibly infinite dimensional space. How though, do we choose $\phi(x)$? Imagine we are given the input vector, $x = (x_1, x_2)$. We could in theory select $\phi(x) = \langle x, x \rangle = (x_1^2 + x_2^2)$, however we saw earlier that this is not an expressive relationship. \\
+
+Most pattern recognition problems begin with the empirical data:
+
+\begin{equation}
+(x_1, y_1), ..., (x_m, y_m) \in X \times \mathbb{R},
+\end{equation} 
+
+\noindent where inputs $x_i$ are taken from the domain $X$ and targets $y_i$ from $\mathbb{R}$. The goal of pattern recognition is to build a classifier that accurately predicts the labels given input values. This naturally requires that we have a measure of the similarity between inputs $x_i$ and $x_k$, the formulation of which is the focus of the following section. \\
+
+In order to measure the similarity between various inputs it could be the case that we choose, for instance, to use the inner product $\langle x, y \rangle$, however this is a linear relationship and not expressive enough for most applications. It turns out, however, that we can extend the concept of the inner product to a general class known as \textit{product features}, which rely on the concept of \textit{monomials}. Formally, we wish to find a non-linear mapping of our domain to a high-dimensional feature space, within which we can compute an inner product. We therefore wish to find
+
+\begin{equation}
+\phi \colon X \rightarrow F 
+\end{equation} 
+
+\noindent where taking the inner product $\langle \dot, \dot \rangle$ in $F$ is equivalent to evaluating the \textit{kernel function} for two input points, i.e.
+
+\begin{equation}
+k(x_i, x_j) = \langle \phi(x_i), \phi(x_j) \rangle
+\end{equation} 
+
+\noindent where $x \rightarrow \phi(x)$ is a mapping from $x$ to its high-dimensional counterpart. As noted, the inner product relies on the computation of monomials, which are products of powers of two variables with non-negative exponents. Monomials are commonly encountered as the individual terms in polynomials and are specified by their degree $d$, which is the sum of the exponents of each of the variables in the monomial. As an example, the monomial $z_1{z_2}^2$ has degree three, while the monomial ${z_1}^2{z_2}^3{z_3}^4$ has degree nine. It is often the case that we wish to compute the set of monomials of a given degree. For a set $Z = \{z_1, z_2\}$ the monomials of degree three are $\{{z_1}^3, {z_2}^3, {z_1}^2{z_2}, {z_1}{z_2}^2\}$. \\
+
+From this we can see that the inner product in $\mathbb{R}^2$ is in fact the linear combination of 
+
+\section{Reproducing Kernel Hilbert Spaces}
+
+
+
+
+

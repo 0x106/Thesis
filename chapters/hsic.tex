@@ -10,18 +10,45 @@ In this chapter we describe the mathematical foundations on which the Hilbert-Sc
 The goal of almost every machine learning problem is to discover a \textit{funtion} which relates input data to output data. In the simplest case, the data is given in the form 
 
 \begin{equation}
-(x_1, y_1), ..., (x_n, y_n) \in \mathbb{X} \times \mathbb{R}^k
+(x_1, y_1), ..., (x_m, y_m) \in \mathbb{X} \times \mathbb{R}^N
 \end{equation}
 
-\noindent where we presume for simplicity that the values $y_i$ are scalars and therefore $k = 1$. The input patterns, $x_i$, are taken from the domain $\mathbb{X}$, which we require to be non-empty. Note that although in this instance we are using input data from a vector field, this does not have to be the case. We may have, for instance, that our data is a graph, a string, or a collection. In simple cases our function may be manually defined, such as $y_i = {x_i}^2$. Conversely, we may use a neural network to learn the function parameters, or we may use an algorithm such as support vector machines. In all these cases the goal is to minimise a {loss function}, defined as the degree to which our learned function can generate output values for a given input. The loss function is minimised when the algorithm is accurate and correctly predicts the output value for each input. Examples of loss functions include
+\noindent where $\{x_i\}$ are input vectors and $\{y_i\}$ are (typically) output scalars. In order to learn a function that reliably assigns output labels to input values we must deal with two (related) problems: (1) how do we compute the similarity between inputs $x_j$ and $x_k$, and (2) do the inputs permit a boundary that can be found by our choice of algorithm? In the simplest case we could use the Euclidean dot product as a similarity measure on the inputs and assign labels to test values according to the training inputs they lie closest to. This amounts to finding a hyperplane that separates the input cases, and is easily visualised as a line separating each class of input in two-dimensions. Unfortunately, however, this example requires that the input data is \textit{linearly separable}, which is never guaranteed. \\
 
-In order to make predictions using the data we need some way of measuring the similarity between the inputs. This is typically achieved using an inner product between input data, i.e.
+% talk about how the outputs determine whether it's classification or regression.
 
-\begin {equation}
-|x_i - x_j| = \langle x_i, x_j \rangle. 
-\end {equation}
+One approach to the linear separability problem is to use neural networks, which are often effective at learning a non-linear decision boundary that separates classes. Whilst both popular, and effective, neural networks will not be the focus of this work. Rather, we will explore the field of \textit{reproducing kernel Hilbert spaces} (RKHS), which allows us to perform what is colloquially known as the \textit{kernel trick}. Rather than operating in the original input space we project each of the input examples to a higher (and possibly infinite) dimensional space where we perform inference. Obviously, however, it is likely that operating in this high dimensional space is intractable, therefore we choose the space in such a way that we can compute inner products without explicitly computing the high dimensional features. Formally, we wish to find a map
 
-In simple circumstances we may simply take the inner product to be the Euclidean dot product between input features, i.e. given $x_i = \{ x_{i1}, x_{i2} \}$ and $x_j = \{ x_{j1}, x_{j2} \}$, the dot product is given by $ \angle x_i, x_j \rangle = [] []^T$. Note, however that this is often too simple a measure for most circumstances, and should typically be replaced with more robust measures. We therefore need to develop a more general measure, that will allow us to represent 
+\begin{equation}
+\Phi \colon \mathbb{X} \rightarrow \mathbb{H},
+\end{equation} 
+
+\noindent and a function that allows
+
+\begin{equation}
+k(x_i, x_j) = \langle \Phi(x_i), \Phi(x_j) \rangle
+\end{equation} 
+
+\noindent such that $\Phi(x)$ is a mapping of the point $x$ to a feature space and $k(x, x)$ is a function that computes dot products between features. Given the inputs $x_1, ..., x_m \in \mathbb{X}$ we refer to $k \colon \mathbb{X}^2 \rightarrow \mathbb{R}$ as a \textit{kernel} and to $K_{ij} := k(x_i, x_j)$ as its associated $m \times m$ \textit{Gram matrix}.
+
+ %Note that although in this instance we are using input data from a vector field, this does not have to be the case. We may have, for instance, that our data is a graph, a string, or a collection. In simple cases our function may be manually defined, such as $y_i = {x_i}^2$. Conversely, we may use a neural network to learn the function parameters, or we may use an algorithm such as support vector machines. In all these cases the goal is to minimise a {loss function}, defined as the degree to which our learned function can generate output values for a given input. The loss function is minimised when the algorithm is accurate and correctly predicts the output value for each input. Examples of loss functions include
+
+% In order to make predictions using the data we need some way of measuring the similarity between the inputs. This is typically achieved using an inner product between input data, i.e.
+
+% \begin {equation}
+% |x_i - x_j| = \langle x_i, x_j \rangle. 
+% \end {equation}
+
+% In simple circumstances we may simply take the inner product to be the Euclidean dot product between input features, i.e. given $x_i = \{ x_{i1}, x_{i2} \}$ and $x_j = \{ x_{j1}, x_{j2} \}$, the dot product is given by $ \angle x_i, x_j \rangle = [] []^T$. Note, however that this is often too simple a measure for most circumstances, and should typically be replaced with more robust measures. We therefore need to develop a more general measure, that will allow us to represent 
+
+% \section {Reproducing Kernel Hilbert Spaces}
+
+% Given that we have a means of projecting data into a high dimensional feature space, can we guarantee that there will be a dot product that will allow us to compare input features? To do this we need to understand certain properties of kernels, and in particular a notion called \textit{universality}. Note also injective kernels. 
+
+% --> make some notes about Mercer Kernels
+% --> also need to talk about the Reisz representation theory ( and what about dual spaces??)
+
+% This is all really important because if you can use an inner product then you can replace it with a kernel measure which allows for the introduction of highly non-linear features. This is notably important when we wish to differentiate between distribtions that lie in the plane and are non-separable. By projecting into higher dimensional space one often finds that they become separable - known as the kernel trick. This has become immensely popular, especially in such applications as kernel SVM and kernel PCA. 
 
 % \section{Functional Analysis}
 

@@ -17,19 +17,62 @@ The goal of almost every machine learning problem is to discover a \textit{funti
 
 % talk about how the outputs determine whether it's classification or regression.
 
-One approach to the linear separability problem is to use neural networks, which are often effective at learning a non-linear decision boundary that separates classes. Whilst both popular, and effective, neural networks will not be the focus of this work. Rather, we will explore the field of \textit{reproducing kernel Hilbert spaces} (RKHS), which allows us to perform what is colloquially known as the \textit{kernel trick}. Rather than operating in the original input space we project each of the input examples to a higher (and possibly infinite) dimensional space where we perform inference. Obviously, however, it is likely that operating in this high dimensional space is intractable, therefore we choose the space in such a way that we can compute inner products without explicitly computing the high dimensional features. Formally, we wish to find a map
+One approach to the linear separability problem is to use neural networks, which are often effective at learning a non-linear decision boundary that separates classes. Whilst both popular, and effective, neural networks will not be the focus of this work. Rather, we will explore the field of \textit{reproducing kernel Hilbert spaces} (RKHS), which allows us to perform what is colloquially known as the \textit{kernel trick}. Rather than operating in the original input space we project each of the input examples to a higher (and possibly infinite) dimensional space where we perform inference. Obviously, however, it is likely that operating in this high dimensional space is intractable, therefore we choose the space in such a way that we can compute inner products without explicitly computing the high dimensional features. We will see that we can define a function, known as a \textit{kernel}, which has an associated vector space that is endowed with a dot product. We will then see by endowing the feature space with additional properties we can form a \textit{reproducing kernel Hilbert space}, which allows us to compute the covariance of the input samples, from which we can estimate the dependence between two sets. \\
+
+Formally, we wish to find a map
 
 \begin{equation}
 \Phi \colon \mathbb{X} \rightarrow \mathbb{H},
 \end{equation} 
 
-\noindent and a function that allows
+\noindent and a function $k$ that allows
 
 \begin{equation}
 k(x_i, x_j) = \langle \Phi(x_i), \Phi(x_j) \rangle
 \end{equation} 
 
-\noindent such that $\Phi(x)$ is a mapping of the point $x$ to a feature space and $k(x, x)$ is a function that computes dot products between features. Given the inputs $x_1, ..., x_m \in \mathbb{X}$ we refer to $k \colon \mathbb{X}^2 \rightarrow \mathbb{R}$ as a \textit{kernel} and to $K_{ij} := k(x_i, x_j)$ as its associated $m \times m$ \textit{Gram matrix}.
+\noindent such that $\Phi(x)$ is a mapping of the point $x$ to a feature space and $k(x, x)$ is a function that computes dot products between features. Given the inputs $x_1, ..., x_m \in \mathbb{X}$ we refer to $k 	\colon \mathbb{X}^2 \rightarrow \mathbb{R}$ as a \textit{kernel} and to $K_{ij} := k(x_i, x_j)$ as its associated $m \times m$ Gram matrix. In addition, the real, symmetric $m \times m$ Gram matrix is called \textit{positive definite} if 
+
+\begin{equation}
+\sum_{i,j}{c_i c_j K_{ij} \geq 0} 
+\end{equation} 
+
+\noindent for all $c_i \in \mathbb{R}$. We then define the function $k$ on $\mathbb{X} \times \mathbb{X}$ as a \textit{positive definite kernel} if for all $m \in \mathbb{N}$ and $x_1, .., x_m \in \mathbb{X}$ $k$ gives rise to a positive definite Gram matrix. \\
+
+\section{Reproducing kernel Hilbert spaces}
+
+The space of functions associated with the feature map is a vector space (note criteria?) with a symmetric, positive definite, bilinear form - i.e. a dot product. Furthermore, if we add the limit points of sequences that are convergent in the norm, $||f|| \colon= \sqrt{\langle f, f \rangle}$, then the space is known as a \textit{Hilbert space}. A Hilbert space $\mathbb{H}$ of functions $f \colon \mathbb{X} \rightarrow \mathbb{R}$ is known as an RKHS with a dot product $\langle \dot, \dot \rangle$ if there exists a function $k \colon \mathbb{X} \times \mathbb{X} \rightarrow \mathbb{R}$ which satisfies
+
+\begin{equation}
+\langle f, k(x,\dot) \rangle = f(x) \text{for all} f \in \mathbb{H}
+\end{equation}
+
+\noindent and for which $k$ spans $\mathbb{H}$. \noindent The first property is known as the \textit{reproducing} property and states that the evaluation of a function at a point is equivalent to taking the inner product of the function with the kernel map at that point. This therefore demonstrates that inner products in a RKHS can be used to implicitly evaluate high dimensional functions. \\
+
+
+
+\section{Hilbert-Schmidt independence criterion}
+
+
+Given an RKHS $F$ we can define the mean element, $\mu_x$, of a domain $X$ as the element of $F$ that satisfies (gretton 2005)
+
+\begin{equation}
+\langle \mu{_x}, f \rangle{_F} = \mathbf{E_x}[\langle \phi(x), f \rangle{_F} ] = \mathbf{E_x}[f(x)]
+\end{equation} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  %Note that although in this instance we are using input data from a vector field, this does not have to be the case. We may have, for instance, that our data is a graph, a string, or a collection. In simple cases our function may be manually defined, such as $y_i = {x_i}^2$. Conversely, we may use a neural network to learn the function parameters, or we may use an algorithm such as support vector machines. In all these cases the goal is to minimise a {loss function}, defined as the degree to which our learned function can generate output values for a given input. The loss function is minimised when the algorithm is accurate and correctly predicts the output value for each input. Examples of loss functions include
 

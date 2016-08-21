@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 AUG 2016 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 AUG 2016 12:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -237,9 +237,7 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 )
 \c@definition=\count117
 
-(./thesis.aux (./chapters/probability.aux) (./chapters/hsic.aux)
-(./chapters/objrecognition.aux) (./chapters/poseEstimation.aux)
-(./chapters/activityRecognition.aux) (./appendices.aux))
+(./thesis.aux (./chapters/hsic.aux) (./appendices.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -339,12 +337,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
 [1
 
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-[2] (./thesis.bbl) [3
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+) [3] (./thesis.bbl) [4
 
 
 
@@ -353,31 +365,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
 
 No file appendices.tex.
-(./thesis.aux (./chapters/hsic.aux) (./appendices.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./thesis.aux (./chapters/hsic.aux) (./appendices.aux)) ) 
 Here is how much of TeX's memory you used:
- 4827 strings out of 493089
- 69500 string characters out of 6134842
- 136302 words of memory out of 5000000
- 8205 multiletter control sequences out of 15000+600000
- 10456 words of font info for 40 fonts, out of 8000000 for 9000
+ 4792 strings out of 493089
+ 68847 string characters out of 6134842
+ 136001 words of memory out of 5000000
+ 8180 multiletter control sequences out of 15000+600000
+ 11384 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,4n,38p,920b,115s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (3 pages, 89997 bytes).
+ 38i,4n,38p,1286b,115s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (4 pages, 111515 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 57 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

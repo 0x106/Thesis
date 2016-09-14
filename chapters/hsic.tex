@@ -57,11 +57,16 @@ The space of functions associated with the feature map is a vector space (note c
 Given an RKHS $F$ we can define the mean element, $\mu_x$, of a domain $X$ as the element of $F$ that satisfies (gretton 2005)
 
 \begin{equation}
-\langle \mu{_x}, f \rangle{_F} = \mathbf{E_x}[\langle \phi(x), f \rangle{_F} ] = \mathbf{E_x}[f(x)]
+\langle \mu{_x}, f \rangle{_F} = \mathbf{E_x}[\langle \phi(x), f \rangle{_F} ] = \mathbf{E_x}[f(x)].
 \end{equation} 
 
+\noindent As in (Gretton 2005) we take the cross-covariance operator as 
 
+\begin{equation}
+C_{xy} \colon= \mathbf{E_{xy}}[(\phi(x) - \mu_x) \otimes (\psi(y) - \mu_y)] = \mathbf{E_{xy}}[\phi(x) \otimes \psi(y)] - \mu_x \otimes \mu_y.
+\end{equation}
 
+\noindent, which 
 
 
 
